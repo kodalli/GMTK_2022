@@ -33,5 +33,4 @@ MonoBehaviour:
   drivers:
     keys:
     - idleTransition
-    - walkUp
-    values: 0200000000000000
+    values: 02000000

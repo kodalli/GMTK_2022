@@ -13,28 +13,16 @@ MonoBehaviour:
   m_Name: idle_down
   m_EditorClassIdentifier: 
   cels:
-  - sprite: {fileID: 9094858594187148072, guid: b80a07f91fcde224ea03e5babf95c238, type: 3}
+  - sprite: {fileID: -380124831486034904, guid: b865efa370ce1ab40bde9ff6aa52aa35, type: 3}
     drivers:
-      keys: []
-      values: 
-  - sprite: {fileID: 929476841708489323, guid: b80a07f91fcde224ea03e5babf95c238, type: 3}
-    drivers:
-      keys: []
-      values: 
-  - sprite: {fileID: 2340821472079302545, guid: b80a07f91fcde224ea03e5babf95c238, type: 3}
-    drivers:
-      keys: []
-      values: 
-  - sprite: {fileID: 122467993558014340, guid: b80a07f91fcde224ea03e5babf95c238, type: 3}
-    drivers:
-      keys: []
-      values: 
+      keys:
+      - idleTransition
+      values: 03000000
   controlDriver:
     name: 
     autoIncrement: 1
     percentageBased: 0
     guid: 046e3046-2b4f-4b71-a6c3-5de4e2624f86
   drivers:
-    keys:
-    - idle
-    values: 00000000
+    keys: []
+    values: 

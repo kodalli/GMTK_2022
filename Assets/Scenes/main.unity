@@ -423,5 +423,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3517422458014903038, guid: 436305a44c3d908419253186084e310f, type: 3}
+      propertyPath: temporaryDrivers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517422458014903038, guid: 436305a44c3d908419253186084e310f, type: 3}
+      propertyPath: temporaryDrivers.Array.data[1]
+      value: runTransition
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 436305a44c3d908419253186084e310f, type: 3}

@@ -18,27 +18,11 @@ MonoBehaviour:
       keys:
       - idleTransition
       values: 01000000
-  - sprite: {fileID: -676840008929182020, guid: b865efa370ce1ab40bde9ff6aa52aa35, type: 3}
-    drivers:
-      keys:
-      - idleTransition
-      values: 01000000
-  - sprite: {fileID: 8969363205843061104, guid: b865efa370ce1ab40bde9ff6aa52aa35, type: 3}
-    drivers:
-      keys:
-      - idleTransition
-      values: 01000000
-  - sprite: {fileID: 5586325270452434421, guid: b865efa370ce1ab40bde9ff6aa52aa35, type: 3}
-    drivers:
-      keys:
-      - idleTransition
-      values: 01000000
   controlDriver:
     name: 
     autoIncrement: 1
     percentageBased: 0
     guid: 046e3046-2b4f-4b71-a6c3-5de4e2624f86
   drivers:
-    keys:
-    - idle
-    values: 00000000
+    keys: []
+    values: 
