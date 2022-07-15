@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.aarthificial.reanimation": {
+      "version": "https://github.com/aarthificial/reanimation.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "228b69e45103b168bf198fbd9bd0c9669774406f"
+    },
     "com.unity.2d.animation": {
       "version": "5.1.1",
       "depth": 0,
@@ -71,6 +78,13 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {}
+    },
+    "com.unity.cinemachine": {
+      "version": "2.6.15",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
       "version": "1.15.12",
