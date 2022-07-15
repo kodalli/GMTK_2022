@@ -18,12 +18,6 @@ public class PlayerController : MonoBehaviour {
         public const string IsMovingHorizontal = "isMovingHorizontal";
         public const string IsMovingRight = "isMovingRight";
         public const string IsMovingUp = "isMovingUp";
-
-        public const string WalkLeft = "walkLeft";
-        public const string WalkRight = "walkRight";
-        public const string WalkUp = "walkUp";
-        public const string WalkDown = "walkDown";
-        public const string Idle = "idle";
     }
 
 
