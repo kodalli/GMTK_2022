@@ -31,8 +31,8 @@ public class Turret : MonoBehaviour
             Vector3 bulletMoveVector = new Vector3(bulletDirX, bulletDirY, 0f);
             Vector2 bulletDir = (bulletMoveVector - transform.position).normalized;
 
-            GameObject bullet = Instantiate(bulletPrefab,transform);
-            bullet.transform.rotation =  Quaternion.Euler(0f,0f,90f-angle);
+            GameObject bullet = Instantiate(bulletPrefab,transform.position, Quaternion.Euler(0f, 0f, 90f - angle));
+            //bullet.transform.rotation =  Quaternion.Euler(0f,0f,90f-angle);
             bullet.GetComponent<Rigidbody2D>().AddForce((bulletDir * 4f),ForceMode2D.Impulse);
             Destroy(bullet,2f);
 
