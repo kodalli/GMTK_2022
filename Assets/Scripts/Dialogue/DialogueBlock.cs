@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Dialogue {
     [CreateAssetMenu(fileName = "DialogueBlock", menuName = "Dialogue", order = 0)]
     public class DialogueBlock : ScriptableObject {
-        [TextArea(15,20)]
+        [TextArea(5,5)]
         public List<string> voiceLines = new List<string>();
 
         public List<CheckPoint> checkpoints = new List<CheckPoint>();

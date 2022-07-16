@@ -11,31 +11,37 @@ namespace Dialogue {
         [SerializeField] private AudioClip sound;
         [SerializeField] private TextMeshProUGUI dialogueText;
         [SerializeField] private PlayerController player;
-        [SerializeField] private List<Talking> speakers = new List<Talking>();
+        [SerializeField] private List<Speaker> speakers = new List<Speaker>();
         [SerializeField] private Button skipButton;
+        
+        [Serializable]
+        public struct Speaker {
+            public Talking head;
+            public DialogueBlock dialogue;
+        }
 
         public void Start() {
             player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         }
 
-        public void PlayDialogue(int speakerIdx, DialogueBlock speech) {
+        public void PlayDialogue(int speakerIdx) {
             var speaker = speakers[speakerIdx];
-            StartCoroutine(speech.GoNextLine(), speaker);
+            StartCoroutine(PlayDialogue(speaker.dialogue.GoNextLine(), speaker.head));
         }
         
-        public void PlayDialogue(int speakerIdx, DialogueBlock speech, int lineIdx) {
+        public void PlayDialogue(int speakerIdx, int lineIdx) {
             var speaker = speakers[speakerIdx];
-            StartCoroutine(speech.GoToLine(lineIdx), speaker);
+            StartCoroutine(PlayDialogue(speaker.dialogue.GoToLine(lineIdx), speaker.head));
         }
 
         private void ToggleSkip(bool state) {
             skipButton.enabled = state;
         }
 
-        private IEnumerator PlayDialogue(string text, Talking speaker) {
+        private IEnumerator PlayDialogue(string text, Talking head) {
             ToggleSkip(false);
             
-            speaker.ToggleTalk();
+            head.ToggleTalk();
             
             player.ToggleInput(false);
 
@@ -47,7 +53,7 @@ namespace Dialogue {
                 count++;
             }
             
-            speaker.ToggleTalk();
+            head.ToggleTalk();
             
             ToggleSkip(true);
             
