@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour {
         public const string IsMovingHorizontal = "isMovingHorizontal";
         public const string IsMovingRight = "isMovingRight";
         public const string IsMovingUp = "isMovingUp";
+
+        public const string MovingRight = "movingRight";
+        public const string MovingLeft = "movingLeft";
     }
 
 
@@ -35,9 +38,12 @@ public class PlayerController : MonoBehaviour {
     private CollisionDetection collisionDetection;
     private GameObject gun;
 
+
     public PlayerState State { get; set; } = PlayerState.Movement;
     private Vector2 gunDirectionInput;
     private Vector2 gunDirection;
+    private bool movingRight;
+    private bool movingLeft;
 
     private void Awake() {
         inputProvider.EnableInput();
@@ -50,15 +56,31 @@ public class PlayerController : MonoBehaviour {
     private void OnEnable() {
         //inputProvider.JumpEvent += OnRun;
         inputProvider.MousePosEvent += OnMouse;
+        reanimator.AddListener(Drivers.MovingLeft, () => {
+            movingLeft = true;
+            movingRight = false;
+        });
+        reanimator.AddListener(Drivers.MovingRight, () => {
+            movingRight = true;
+            movingLeft = false;
+        });
     }
 
     private void OnDisable() {
         //inputProvider.JumpEvent -= OnRun;
         inputProvider.MousePosEvent -= OnMouse;
+        reanimator.RemoveListener(Drivers.MovingLeft, () => {
+            movingLeft = true;
+            movingRight = false;
+        });
+        reanimator.RemoveListener(Drivers.MovingRight, () => {
+            movingRight = true;
+            movingLeft = false;
+        });
     }
 
-
     private void Update() {
+        UpdateMovementState();
         UpdateGunDirection();
 
         reanimator.Set(Drivers.IsMoving, MovementDirection != Vector2.zero);
@@ -67,18 +89,15 @@ public class PlayerController : MonoBehaviour {
         reanimator.Set(Drivers.IsMovingUp, MovementDirection.y > 0);
     }
 
-    private void FixedUpdate() {
-        UpdateMovementState();
-    }
-
-
-    private void OnMouse(Vector2 value) => gunDirectionInput = Camera.main.ScreenToWorldPoint(value) - transform.position;
+    private void OnMouse(Vector2 value) =>
+        gunDirectionInput = Camera.main.ScreenToWorldPoint(value) - transform.position;
 
     public void EnterMovementState() {
         State = PlayerState.Movement;
     }
 
     private void OnRun() => EnterRunState();
+
     private void EnterRunState() {
         if (State != PlayerState.Movement || !runStopwatch.IsReady) return;
         State = PlayerState.Run;
@@ -94,6 +113,15 @@ public class PlayerController : MonoBehaviour {
 
         float angle = Vector2.SignedAngle(Vector2.right, gunDirection);
         gun.transform.rotation = Quaternion.Euler(0f, 0f, angle + 270);
+
+        if (movingLeft) {
+            gun.gameObject.GetComponent<SpriteRenderer>().flipY = true;
+            gun.transform.rotation = Quaternion.Euler(0f, 0f, angle + 90);
+        }
+        if (movingRight) {
+            gun.gameObject.GetComponent<SpriteRenderer>().flipY = false;
+        }
+
     }
 
     private void UpdateMovementState() {

@@ -16,9 +16,8 @@ MonoBehaviour:
   - sprite: {fileID: 9094858594187148072, guid: b80a07f91fcde224ea03e5babf95c238, type: 3}
     drivers:
       keys:
-      - runTransition
       - idleTransition
-      values: 0000000000000000
+      values: 00000000
   controlDriver:
     name: 
     autoIncrement: 1
