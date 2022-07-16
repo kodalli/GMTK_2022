@@ -4,6 +4,7 @@ using UnityEngine;
 [Serializable]
 public struct InputState {
     public Vector2 movementDirection;
+    public Vector2 mouseDirection;
 
     public bool interactClicked;
     public bool interactReleased;

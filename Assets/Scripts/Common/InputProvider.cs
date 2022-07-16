@@ -46,6 +46,7 @@ public class InputProvider : ScriptableObject, IInputProvider, PlayerInput.IGame
     public void OnMouse(InputAction.CallbackContext context)
     {
         MousePosEvent?.Invoke(context.ReadValue<Vector2>());
+        inputState.mouseDirection = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>());
     }
     
     public static implicit operator InputState(InputProvider provider) => provider.GetState();
