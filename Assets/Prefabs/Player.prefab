@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3517422458014902979}
   - component: {fileID: 3517422458014903038}
   - component: {fileID: 3517422458014903039}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 926379791
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 075ca5464f8641c4c9eafd05f11cdbb6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -193,6 +193,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3517422458014903036}
     m_Modifications:
+    - target: {fileID: 334547766460894303, guid: fb0e8bab1976cc7408c292577e66ce59, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 494773596169287160, guid: fb0e8bab1976cc7408c292577e66ce59, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -211,7 +215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7870550121123523045, guid: fb0e8bab1976cc7408c292577e66ce59, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7870550121123523045, guid: fb0e8bab1976cc7408c292577e66ce59, type: 3}
       propertyPath: m_SortingOrder
@@ -268,6 +272,10 @@ PrefabInstance:
     - target: {fileID: 7870550121123523047, guid: fb0e8bab1976cc7408c292577e66ce59, type: 3}
       propertyPath: m_Name
       value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870550121123523047, guid: fb0e8bab1976cc7408c292577e66ce59, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9132822984608195253, guid: fb0e8bab1976cc7408c292577e66ce59, type: 3}
       propertyPath: m_LocalPosition.x

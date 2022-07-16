@@ -39,8 +39,10 @@ public class CollisionDetection : MonoBehaviour {
                 rigidbody2D.velocity = Vector2.zero;
         } else if (ceilingContact.HasValue) {
             var wallDirection = (int) Mathf.Sign(ceilingContact.Value.point.x - transform.position.x);
-            if (verticalDirection == wallDirection)
+            if (verticalDirection == wallDirection) {
+                Debug.Log("pressing up into ceiling");                
                 rigidbody2D.velocity = Vector2.zero;
+            }
         } else if (wallContact.HasValue) {
             var wallDirection = (int) Mathf.Sign(wallContact.Value.point.x - transform.position.x);
             if (horizontalDirection == wallDirection)

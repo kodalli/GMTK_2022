@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour {
 
 
     [SerializeField] private InputProvider inputProvider;
-    [SerializeField] private float runSpeed = 10;
     [SerializeField] private float walkSpeed = 7;
     [SerializeField] private float bulletForce = 20f;
     private readonly Stopwatch runStopwatch = new Stopwatch();
@@ -51,14 +50,14 @@ public class PlayerController : MonoBehaviour {
 
     private void Awake() {
         inputProvider.EnableInput();
-
+        
         reanimator = GetComponent<Reanimator>();
         collisionDetection = GetComponent<CollisionDetection>();
+
         gun = transform.Find("Gun").gameObject;
     }
 
     private void OnEnable() {
-        //inputProvider.JumpEvent += OnRun;
         inputProvider.MousePosEvent += OnMouse;
         inputProvider.ShootEvent += Shoot;
         reanimator.AddListener(Drivers.MovingLeft, () => {
@@ -72,7 +71,6 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnDisable() {
-        //inputProvider.JumpEvent -= OnRun;
         inputProvider.MousePosEvent -= OnMouse;
         inputProvider.ShootEvent -= Shoot;
         reanimator.RemoveListener(Drivers.MovingLeft, () => {
@@ -104,19 +102,6 @@ public class PlayerController : MonoBehaviour {
     private void OnMouse(Vector2 value) =>
         gunDirectionInput = Camera.main.ScreenToWorldPoint(value) - transform.position;
 
-    public void EnterMovementState() {
-        State = PlayerState.Movement;
-    }
-
-    private void OnRun() => EnterRunState();
-
-    private void EnterRunState() {
-        if (State != PlayerState.Movement || !runStopwatch.IsReady) return;
-        State = PlayerState.Run;
-
-        runStopwatch.Split();
-    }
-
     private void UpdateGunDirection() {
         if (gunDirectionInput != Vector2.zero) {
             gunDirection = gunDirectionInput;
@@ -143,24 +128,6 @@ public class PlayerController : MonoBehaviour {
 
         velocityChange.x = (MovementDirection.x * walkSpeed - previousVelocity.x) / 4;
         velocityChange.y = (MovementDirection.y * walkSpeed - previousVelocity.y) / 4;
-
-        if (State == PlayerState.Run) {
-            velocityChange.x = (MovementDirection.x * runSpeed - previousVelocity.x) / 4;
-            velocityChange.y = (MovementDirection.y * runSpeed - previousVelocity.y) / 4;
-
-            if (runStopwatch.IsFinished || collisionDetection.wallContact.HasValue) {
-                runStopwatch.Split();
-                EnterMovementState();
-            }
-        }
-
-        if (collisionDetection.wallContact.HasValue) {
-            var wallDirection = (int) Mathf.Sign(collisionDetection.wallContact.Value.point.x - transform.position.x);
-            var walkDirection = (int) Mathf.Sign(MovementDirection.x);
-
-            if (walkDirection == wallDirection)
-                velocityChange.x = 0;
-        }
 
         collisionDetection.rigidbody2D.AddForce(velocityChange, ForceMode2D.Impulse);
     }
