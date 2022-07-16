@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c774085-9ee6-4d08-aeb6-54a58b5e137b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ui.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ui/PanelOpener.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ui/PanelOpener.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ui/Talking.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ui/Talking.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GMTK_2022/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GMTK_2022/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Casino.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Casino.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Card/CardRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Card/CardRenderer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +24,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/CollisionDetection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../IndieTalesGameJam/IndieTalesGameJam2021/Assets/Scripts/Dialogue/Runtime/DialogueContainer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../IndieTalesGameJam/IndieTalesGameJam2021/Assets/Scripts/Dialogue/Runtime/DialogueNodeData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../IndieTalesGameJam/IndieTalesGameJam2021/Assets/Scripts/Dialogue/Runtime/CommentBlockData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../IndieTalesGameJam/IndieTalesGameJam2021/Assets/Scripts/DialogueReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../IndieTalesGameJam/IndieTalesGameJam2021/Assets/Scripts/Dialogue/Editor/DialogueGraph/Nodes/DialogueNode.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
