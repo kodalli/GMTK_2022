@@ -153,4 +153,13 @@ public class PlayerController : MonoBehaviour {
 
         collisionDetection.rigidbody2D.AddForce(velocityChange, ForceMode2D.Impulse);
     }
+
+    public void ToggleInput(bool state) {
+        if (state) {
+            inputProvider.EnableInput();
+        }
+        else {
+            inputProvider.DisableInput();
+        }
+    }
 }
