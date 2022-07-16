@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: walk-down
   m_EditorClassIdentifier: 
   cels:
-  - sprite: {fileID: 4726453446469799163, guid: deb17ce77b82ce043886753ea0ef7c83, type: 3}
+  - sprite: {fileID: -1537322248492532101, guid: 3bf8f50f2b188d3438d972eedf997bbe, type: 3}
     drivers:
       keys: []
       values: 
-  - sprite: {fileID: 2669894956318206922, guid: deb17ce77b82ce043886753ea0ef7c83, type: 3}
+  - sprite: {fileID: -9001421534238329118, guid: 3bf8f50f2b188d3438d972eedf997bbe, type: 3}
     drivers:
       keys: []
       values: 
-  - sprite: {fileID: 5374866124780903286, guid: deb17ce77b82ce043886753ea0ef7c83, type: 3}
+  - sprite: {fileID: -2530960314935523619, guid: 3bf8f50f2b188d3438d972eedf997bbe, type: 3}
     drivers:
       keys: []
       values: 
