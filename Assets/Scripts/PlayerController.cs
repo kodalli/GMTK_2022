@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour {
     private Reanimator reanimator;
     private CollisionDetection collisionDetection;
     private GameObject gun;
+    private Transform firePoint;
 
 
     public PlayerState State { get; set; } = PlayerState.Movement;
@@ -51,6 +52,7 @@ public class PlayerController : MonoBehaviour {
         reanimator = GetComponent<Reanimator>();
         collisionDetection = GetComponent<CollisionDetection>();
         gun = transform.Find("Gun").gameObject;
+        firePoint = transform.Find("firePoint");
     }
 
     private void OnEnable() {

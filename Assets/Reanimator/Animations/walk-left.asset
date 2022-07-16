@@ -32,5 +32,6 @@ MonoBehaviour:
     guid: 3bacbf56-6516-4983-8916-17015805992b
   drivers:
     keys:
+    - movingLeft
     - idleTransition
-    values: 00000000
+    values: 0000000000000000
