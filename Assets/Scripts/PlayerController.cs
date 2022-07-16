@@ -125,16 +125,16 @@ public class PlayerController : MonoBehaviour {
 
         float angle = Vector2.SignedAngle(Vector2.right, gunDirection);
         gun.transform.rotation = Quaternion.Euler(0f, 0f, angle + 270);
-        firePoint.transform.rotation = gun.transform.rotation;
+        //firePoint.transform.rotation = gun.transform.rotation;
 
-        if (!movingRight) {
-            gun.gameObject.GetComponent<SpriteRenderer>().flipY = true;
-            gun.transform.rotation = Quaternion.Euler(0f, 0f, angle + 90);
-            firePoint.transform.rotation = Quaternion.Euler(0f, 0f, angle + 270);
-        }
-        else {
-            gun.gameObject.GetComponent<SpriteRenderer>().flipY = false;
-        }
+        // if (!movingRight) {
+        //     gun.gameObject.GetComponent<SpriteRenderer>().flipY = true;
+        //     gun.transform.rotation = Quaternion.Euler(0f, 0f, angle + 90);
+        //     firePoint.transform.rotation = Quaternion.Euler(0f, 0f, angle + 270);
+        // }
+        // else {
+        //     gun.gameObject.GetComponent<SpriteRenderer>().flipY = false;
+        // }
     }
 
     private void UpdateMovementState() {
