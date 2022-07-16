@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Start() {
-        LoadMainMenu();
+        // LoadMainMenu();
     }
 
     public void LoadCasinoScene() {
