@@ -167,6 +167,7 @@ MonoBehaviour:
   fps: 12
   temporaryDrivers:
   - idleTransition
+  - runTransition
 --- !u!114 &3517422458014903039
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: idle_up
   m_EditorClassIdentifier: 
   cels:
-  - sprite: {fileID: -380124831486034904, guid: b865efa370ce1ab40bde9ff6aa52aa35, type: 3}
+  - sprite: {fileID: 2194291717487848346, guid: 3bec03672a3824c448adc7e05571afde, type: 3}
     drivers:
       keys:
       - idleTransition

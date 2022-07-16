@@ -28,44 +28,38 @@ public class PlayerController : MonoBehaviour {
 
     private InputState inputState => inputProvider;
     private Vector2 MovementDirection => inputState.movementDirection;
-    
-    
+    private Vector2 MouseDirection => inputState.mouseDirection;
+
+
     private Reanimator reanimator;
     private CollisionDetection collisionDetection;
-    //private GameObject flashLight;
+    private GameObject gun;
 
     public PlayerState State { get; set; } = PlayerState.Movement;
-    //public Vector2 MovementInput { get; private set; }
-
-    private bool canRun;
-    private int enemyLayer;
-    private Vector2 lightDirectionInput;
-    private Vector2 lightDirection;
+    private Vector2 gunDirectionInput;
+    private Vector2 gunDirection;
 
     private void Awake() {
         inputProvider.EnableInput();
-        
+
         reanimator = GetComponent<Reanimator>();
         collisionDetection = GetComponent<CollisionDetection>();
-        //flashLight = transform.Find("PointLight").gameObject;
-        enemyLayer = LayerMask.NameToLayer($"Enemy");
+        gun = transform.Find("Gun").gameObject;
     }
 
     private void OnEnable() {
-        //inputProvider.MoveEvent += OnMove;
         //inputProvider.JumpEvent += OnRun;
         inputProvider.MousePosEvent += OnMouse;
     }
 
     private void OnDisable() {
-        //inputProvider.MoveEvent -= OnMove;
         //inputProvider.JumpEvent -= OnRun;
         inputProvider.MousePosEvent -= OnMouse;
     }
 
 
     private void Update() {
-        UpdateLightDirection();
+        UpdateGunDirection();
 
         reanimator.Set(Drivers.IsMoving, MovementDirection != Vector2.zero);
         reanimator.Set(Drivers.IsMovingHorizontal, MovementDirection.x != 0);
@@ -74,28 +68,17 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        switch (State) {
-            case PlayerState.Movement:
-                UpdateMovementState();
-                break;
-            case PlayerState.Run:
-                UpdateMovementState();
-                break;
-            default:
-                throw new ArgumentOutOfRangeException($"Out of Range: ", "Something is wrong with the Enums");
-        }
+        UpdateMovementState();
     }
 
-    //private void OnMove(Vector2 value) => MovementInput = value;
-    //private void OnRun() => EnterRunState();
 
-    private void OnMouse(Vector2 value) =>
-        lightDirectionInput = Camera.main.ScreenToWorldPoint(value) - transform.position;
+    private void OnMouse(Vector2 value) => gunDirectionInput = Camera.main.ScreenToWorldPoint(value) - transform.position;
 
     public void EnterMovementState() {
         State = PlayerState.Movement;
     }
 
+    private void OnRun() => EnterRunState();
     private void EnterRunState() {
         if (State != PlayerState.Movement || !runStopwatch.IsReady) return;
         State = PlayerState.Run;
@@ -103,14 +86,14 @@ public class PlayerController : MonoBehaviour {
         runStopwatch.Split();
     }
 
-    private void UpdateLightDirection() {
-        if (lightDirectionInput != Vector2.zero) {
-            lightDirection = lightDirectionInput;
-            lightDirection.Normalize();
+    private void UpdateGunDirection() {
+        if (gunDirectionInput != Vector2.zero) {
+            gunDirection = gunDirectionInput;
+            gunDirection.Normalize();
         }
 
-        float angle = Vector2.SignedAngle(Vector2.right, lightDirection);
-        //flashLight.transform.rotation = Quaternion.Euler(0f, 0f, angle + 270);
+        float angle = Vector2.SignedAngle(Vector2.right, gunDirection);
+        gun.transform.rotation = Quaternion.Euler(0f, 0f, angle + 270);
     }
 
     private void UpdateMovementState() {
