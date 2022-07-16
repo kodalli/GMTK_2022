@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
@@ -9,18 +10,17 @@ public class InputProvider : ScriptableObject, IInputProvider, PlayerInput.IGame
     private PlayerInput GameInput { get; set; }
     public InputState inputState;
     public event UnityAction<Vector2> MousePosEvent;
+    public event UnityAction ShootEvent;
     public event UnityAction InteractionCancelledEvent;
     public event UnityAction InteractionStartedEvent;
 
 
-    private void OnEnable()
-    {
+    private void OnEnable() {
         GameInput ??= new PlayerInput();
         GameInput.Gameplay.SetCallbacks(this);
     }
 
-    public void OnMove(InputAction.CallbackContext context)
-    {
+    public void OnMove(InputAction.CallbackContext context) {
         inputState.movementDirection = context.ReadValue<Vector2>();
     }
 
@@ -43,32 +43,47 @@ public class InputProvider : ScriptableObject, IInputProvider, PlayerInput.IGame
         }
     }
 
-    public void OnMouse(InputAction.CallbackContext context)
-    {
+    public void OnMouse(InputAction.CallbackContext context) {
         MousePosEvent?.Invoke(context.ReadValue<Vector2>());
         inputState.mouseDirection = Camera.main.ScreenToWorldPoint(context.ReadValue<Vector2>());
     }
-    
+
+    public void OnShoot(InputAction.CallbackContext context) {
+        switch (context.phase) {
+            case InputActionPhase.Started:
+                inputState.leftMouseButtonClicked = true;
+                inputState.leftMouseButtonReleased = false;
+                ShootEvent?.Invoke();
+                break;
+            case InputActionPhase.Canceled:
+                inputState.leftMouseButtonClicked = false;
+                inputState.leftMouseButtonReleased = true;
+                break;
+        }
+    }
+
     public static implicit operator InputState(InputProvider provider) => provider.GetState();
     public static implicit operator Vector2(InputProvider provider) => provider.GetState().movementDirection.normalized;
-    
-    public InputState GetState()
-    {
+
+    public InputState GetState() {
         return new InputState {
             movementDirection = inputState.movementDirection,
+
             interactClicked = inputState.interactClicked,
             interactReleased = inputState.interactReleased,
             isInteracting = inputState.isInteracting,
+
+            leftMouseButtonClicked = inputState.leftMouseButtonClicked,
+            leftMouseButtonReleased = inputState.leftMouseButtonReleased
         };
     }
 
-    public void EnableInput()
-    {
+    public void EnableInput() {
         GameInput.Gameplay.Enable();
         Helper.CustomLog("Gameplay Input Enabled", LogColor.White);
     }
-    public void DisableInput()
-    {
+
+    public void DisableInput() {
         GameInput.Gameplay.Disable();
         Helper.CustomLog("Gameplay Input Disabled", LogColor.White);
     }

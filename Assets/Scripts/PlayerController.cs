@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Aarthificial.Reanimation;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -25,9 +26,9 @@ public class PlayerController : MonoBehaviour {
 
 
     [SerializeField] private InputProvider inputProvider;
-    [SerializeField] private float runSpeed = 10;
     [SerializeField] private float walkSpeed = 7;
-    [SerializeField] private Stopwatch runStopwatch = new Stopwatch();
+    [SerializeField] private float bulletForce = 20f;
+    private readonly Stopwatch runStopwatch = new Stopwatch();
 
     private InputState inputState => inputProvider;
     private Vector2 MovementDirection => inputState.movementDirection;
@@ -37,7 +38,8 @@ public class PlayerController : MonoBehaviour {
     private Reanimator reanimator;
     private CollisionDetection collisionDetection;
     private GameObject gun;
-    private Transform firePoint;
+    public Transform firePoint;
+    public GameObject bulletPrefab;
 
 
     public PlayerState State { get; set; } = PlayerState.Movement;
@@ -48,16 +50,16 @@ public class PlayerController : MonoBehaviour {
 
     private void Awake() {
         inputProvider.EnableInput();
-
+        
         reanimator = GetComponent<Reanimator>();
         collisionDetection = GetComponent<CollisionDetection>();
+
         gun = transform.Find("Gun").gameObject;
-        firePoint = transform.Find("firePoint");
     }
 
     private void OnEnable() {
-        //inputProvider.JumpEvent += OnRun;
         inputProvider.MousePosEvent += OnMouse;
+        inputProvider.ShootEvent += Shoot;
         reanimator.AddListener(Drivers.MovingLeft, () => {
             movingLeft = true;
             movingRight = false;
@@ -69,8 +71,8 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnDisable() {
-        //inputProvider.JumpEvent -= OnRun;
         inputProvider.MousePosEvent -= OnMouse;
+        inputProvider.ShootEvent -= Shoot;
         reanimator.RemoveListener(Drivers.MovingLeft, () => {
             movingLeft = true;
             movingRight = false;
@@ -91,21 +93,14 @@ public class PlayerController : MonoBehaviour {
         reanimator.Set(Drivers.IsMovingUp, MovementDirection.y > 0);
     }
 
+    private void Shoot() {
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+    }
+
     private void OnMouse(Vector2 value) =>
         gunDirectionInput = Camera.main.ScreenToWorldPoint(value) - transform.position;
-
-    public void EnterMovementState() {
-        State = PlayerState.Movement;
-    }
-
-    private void OnRun() => EnterRunState();
-
-    private void EnterRunState() {
-        if (State != PlayerState.Movement || !runStopwatch.IsReady) return;
-        State = PlayerState.Run;
-
-        runStopwatch.Split();
-    }
 
     private void UpdateGunDirection() {
         if (gunDirectionInput != Vector2.zero) {
@@ -115,15 +110,16 @@ public class PlayerController : MonoBehaviour {
 
         float angle = Vector2.SignedAngle(Vector2.right, gunDirection);
         gun.transform.rotation = Quaternion.Euler(0f, 0f, angle + 270);
+        //firePoint.transform.rotation = gun.transform.rotation;
 
-        if (movingLeft) {
-            gun.gameObject.GetComponent<SpriteRenderer>().flipY = true;
-            gun.transform.rotation = Quaternion.Euler(0f, 0f, angle + 90);
-        }
-        if (movingRight) {
-            gun.gameObject.GetComponent<SpriteRenderer>().flipY = false;
-        }
-
+        // if (!movingRight) {
+        //     gun.gameObject.GetComponent<SpriteRenderer>().flipY = true;
+        //     gun.transform.rotation = Quaternion.Euler(0f, 0f, angle + 90);
+        //     firePoint.transform.rotation = Quaternion.Euler(0f, 0f, angle + 270);
+        // }
+        // else {
+        //     gun.gameObject.GetComponent<SpriteRenderer>().flipY = false;
+        // }
     }
 
     private void UpdateMovementState() {
@@ -132,24 +128,6 @@ public class PlayerController : MonoBehaviour {
 
         velocityChange.x = (MovementDirection.x * walkSpeed - previousVelocity.x) / 4;
         velocityChange.y = (MovementDirection.y * walkSpeed - previousVelocity.y) / 4;
-
-        if (State == PlayerState.Run) {
-            velocityChange.x = (MovementDirection.x * runSpeed - previousVelocity.x) / 4;
-            velocityChange.y = (MovementDirection.y * runSpeed - previousVelocity.y) / 4;
-
-            if (runStopwatch.IsFinished || collisionDetection.wallContact.HasValue) {
-                runStopwatch.Split();
-                EnterMovementState();
-            }
-        }
-
-        if (collisionDetection.wallContact.HasValue) {
-            var wallDirection = (int) Mathf.Sign(collisionDetection.wallContact.Value.point.x - transform.position.x);
-            var walkDirection = (int) Mathf.Sign(MovementDirection.x);
-
-            if (walkDirection == wallDirection)
-                velocityChange.x = 0;
-        }
 
         collisionDetection.rigidbody2D.AddForce(velocityChange, ForceMode2D.Impulse);
     }
