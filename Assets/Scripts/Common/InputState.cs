@@ -10,6 +10,7 @@ public struct InputState {
     public bool interactReleased;
     public bool isInteracting;
     public float holdTimer;
-    
-    
+
+    public bool leftMouseButtonClicked;
+    public bool leftMouseButtonReleased;
 }
