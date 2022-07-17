@@ -4,18 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SlimyDemonController : MonoBehaviour {
+    [SerializeField] private float health = 100;
     [SerializeField] private float speed = 2f;
     [SerializeField] private List<Transform> waypoints;
 
     private int waypointIndex;
     private bool inRoutine;
     void Update() {
-        if (!inRoutine) {
-            inRoutine = true;
-            StartCoroutine(MoveEnemy());
-        }
+        // if (!inRoutine) {
+        //     inRoutine = true;
+        //     StartCoroutine(MoveEnemy());
+        // }
     }
 
+    public void UpdateHealth() {
+        Debug.Log(health);
+    }
     IEnumerator MoveEnemy() {
 
         float step = speed * Time.deltaTime;
