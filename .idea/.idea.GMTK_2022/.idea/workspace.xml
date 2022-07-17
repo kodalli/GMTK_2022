@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c774085-9ee6-4d08-aeb6-54a58b5e137b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Sound/SoundManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GMTK_2022/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GMTK_2022/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Tb_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Tb_2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Casino_Tuxedo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Casino_Tuxedo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/testing_interaction.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/testing_interaction.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/V2/DialogueReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/V2/DialogueReader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/TalkToNpc/InteractTuxedo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/TalkToNpc/InteractTuxedo.cs" afterDir="false" />
-    </list>
+    <list default="true" id="9c774085-9ee6-4d08-aeb6-54a58b5e137b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
