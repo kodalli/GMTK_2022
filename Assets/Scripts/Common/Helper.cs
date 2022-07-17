@@ -166,7 +166,9 @@ public static class Helper {
         _mRect.sizeDelta = _parent.rect.size;
         _mRect.transform.SetParent(_parent);
     }
-
+    public static bool CircleCast(Vector2 origin, float radius, Vector2 direction, float distance, LayerMask layer,
+        out RaycastHit2D ray) =>
+        ray = Physics2D.CircleCast(origin, radius, direction, distance, layer);
     public static bool Raycast(Vector2 origin, Vector2 direction, float distance, LayerMask layer,
         out RaycastHit2D ray) =>
         ray = Physics2D.Raycast(origin, direction, distance, layer);

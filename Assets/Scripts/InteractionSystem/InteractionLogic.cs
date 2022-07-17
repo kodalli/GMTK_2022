@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "InteractionLogic", menuName = "InteractionSystem/InteractionLogic", order = 0)]
@@ -11,15 +12,17 @@ public class InteractionLogic : ScriptableObject {
     [SerializeField] private LayerMask interactionLayer;
     [SerializeField] private Optional<float> useRequiredDistance;
 
-    public void UpdateInteractable(Component player, Vector3 center) {
+    public void UpdateInteractable(PlayerController player, Vector3 center) {
         CheckForInteractable(player, center);
         CheckForInteractableInput(player);
         // CheckForSpecialInteraction(player);
     }
 
-    private void CheckForInteractable(Component player, Vector3 center) {
-        bool hitSomething = Helper.Raycast(center,
-            player.transform.right, rayDistance, interactionLayer, out var ray);
+    private void CheckForInteractable(PlayerController player, Vector3 center) {
+        bool hitSomething;
+        
+        hitSomething = Helper.CircleCast(center, 2f, center, 0, interactionLayer,
+            out var ray);
         if (hitSomething) {
             interactable = ray.transform.GetComponent<Interactable>();
             if (interactable != null) {
@@ -37,18 +40,16 @@ public class InteractionLogic : ScriptableObject {
             interactionData.ResetData();
             interactable = null;
         }
-
-        Debug.DrawRay(center, player.transform.right * rayDistance,
-            hitSomething ? Color.green : Color.red);
     }
 
-    private void CheckForInteractableInput(Component player) {
+
+    private void CheckForInteractableInput(PlayerController player) {
         if (interactionData.IsEmpty() || !inputProvider.inputState.isInteracting ||
             !interactionData.Interactable.IsInteractable ||
             interactionData.Interactable.IsSpecialInteraction) return;
 
         float distanceBetweenInteractable = interactable.transform.position.x - player.transform.position.x;
-        Debug.Log(distanceBetweenInteractable);
+        // Debug.Log(distanceBetweenInteractable);
         if (distanceBetweenInteractable >= interactable.RequiredDistance && useRequiredDistance.Enabled) return;
 
         if (interactionData.Interactable.HoldInteract) {

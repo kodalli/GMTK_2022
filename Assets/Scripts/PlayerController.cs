@@ -26,12 +26,14 @@ public class PlayerController : MonoBehaviour {
 
 
     [SerializeField] private InputProvider inputProvider;
+    [SerializeField] private InteractionLogic interactionLogic;
+    [SerializeField] private new BoxCollider2D collider;
     [SerializeField] private float walkSpeed = 7;
     [SerializeField] private float bulletForce = 20f;
     private readonly Stopwatch runStopwatch = new Stopwatch();
 
     private InputState inputState => inputProvider;
-    private Vector2 MovementDirection => inputState.movementDirection;
+    public Vector2 MovementDirection => inputState.movementDirection;
     private Vector2 MouseDirection => inputState.mouseDirection;
     public InputProvider InputProvider => inputProvider;
 
@@ -54,39 +56,46 @@ public class PlayerController : MonoBehaviour {
         
         reanimator = GetComponent<Reanimator>();
         collisionDetection = GetComponent<CollisionDetection>();
+        collider = GetComponent<BoxCollider2D>();
 
         gun = transform.Find("Gun").gameObject;
     }
-
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(collider.bounds.center, 2f);
+    }
     private void OnEnable() {
         inputProvider.MousePosEvent += OnMouse;
         inputProvider.ShootEvent += Shoot;
-        reanimator.AddListener(Drivers.MovingLeft, () => {
+        // reanimator.AddListener(Drivers.MovingLeft, () => {
             // movingLeft = true;
             // movingRight = false;
-        });
-        reanimator.AddListener(Drivers.MovingRight, () => {
+        // });
+        // reanimator.AddListener(Drivers.MovingRight, () => {
             // movingRight = true;
             // movingLeft = false;
-        });
+        // });
     }
 
     private void OnDisable() {
         inputProvider.MousePosEvent -= OnMouse;
         inputProvider.ShootEvent -= Shoot;
-        reanimator.RemoveListener(Drivers.MovingLeft, () => {
+
+        // reanimator.RemoveListener(Drivers.MovingLeft, () => {
             // movingLeft = true;
             // movingRight = false;
-        });
-        reanimator.RemoveListener(Drivers.MovingRight, () => {
+        // });
+        // reanimator.RemoveListener(Drivers.MovingRight, () => {
             // movingRight = true;
             // movingLeft = false;
-        });
+        // });
     }
 
     private void Update() {
         UpdateMovementState();
         UpdateGunDirection();
+        UpdateGunDirection();
+        interactionLogic.UpdateInteractable(this, collider.bounds.center);
 
         reanimator.Set(Drivers.IsMoving, MovementDirection != Vector2.zero);
         reanimator.Set(Drivers.IsMovingHorizontal, MovementDirection.x != 0);

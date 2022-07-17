@@ -3,8 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="9c774085-9ee6-4d08-aeb6-54a58b5e137b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GMTK_2022/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GMTK_2022/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/idle_down.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/idle_down.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/idle_left.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/idle_left.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/idle_right.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/idle_right.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/idle_up.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/idle_up.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/walk-down.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/walk-down.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/walk-left.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/walk-left.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/walk-right.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/walk-right.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/walk-up.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/walk-up.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Casino.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Casino.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Common/Helper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Common/Helper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/InteractionLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/InteractionLogic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/bulletpooler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/bulletpooler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +40,7 @@
     <setting file="file://$PROJECT_DIR$/../IndieTalesGameJam/IndieTalesGameJam2021/LocalPackages/com.unity.render-pipelines.high-definition-config/Runtime/ShaderConfig.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3BE1A7FF-939C-43F1-81C0-A10B5A0189AC/b7/543009cc/SpriteRenderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../IndieTalesGameJam/IndieTalesGameJam2021/Assets/Scripts/Dialogue/Runtime/DialogueContainer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CAFB29D5-2338-47FB-B4ED-CF8D7C32B1E3/90/901da49b/Boolean.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../IndieTalesGameJam/IndieTalesGameJam2021/Assets/Scripts/Helpers/CollisionDetection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../IndieTalesGameJam/IndieTalesGameJam2021/Assets/Scripts/Dialogue/Runtime/CommentBlockData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BulletScripts/BulletController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -37,6 +51,7 @@
     <setting file="file://$PROJECT_DIR$/../IndieTalesGameJam/IndieTalesGameJam2021/Assets/Scripts/Input/InputReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogue/V2/DialogueReader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../senior-design/Senior-Design/Assets/Scripts/Core/CollisionDetection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4C5A6552-EE3E-423A-A509-A1D67235DF50/bd/b158cee0/Physics2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/CollisionDetection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../IndieTalesGameJam/IndieTalesGameJam2021/Assets/Scripts/DialogueReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../senior-design/Senior-Design/Assets/Scripts/Player/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -44,14 +59,15 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/CollisionDetection.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/InteractionLogic.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Common/Stopwatch.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Common/InputState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Common/InputProvider.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Common/CollisionDetection.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SlimyDemonController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue/V2/DialogueReader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Common/Helper.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/InteractionLogic.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
     </changedPaths>
   </component>
   <component name="MarkdownSettingsMigration">
