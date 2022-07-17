@@ -9947,6 +9947,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1828968461 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3517422458014902978, guid: 436305a44c3d908419253186084e310f, type: 3}
+  m_PrefabInstance: {fileID: 1848221885}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1848221885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10010,6 +10015,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3517422458014903039, guid: 436305a44c3d908419253186084e310f, type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 1828968461}
+    - target: {fileID: 3517422458014903039, guid: 436305a44c3d908419253186084e310f, type: 3}
+      propertyPath: interactionLogic
+      value: 
+      objectReference: {fileID: 11400000, guid: e1c8e3b8fe80bed49ae9c47ae84d9243, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 436305a44c3d908419253186084e310f, type: 3}
 --- !u!1 &1904997702

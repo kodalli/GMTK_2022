@@ -378,7 +378,13 @@ MonoBehaviour:
   dialogueText: {fileID: 398524006}
   choicePrefab: {fileID: 3102500559854669817, guid: 4a96c76082d821244a060872902c4a32, type: 3}
   buttonContainer: {fileID: 1407071527}
+  panelContainer: {fileID: 0}
+  sound: {fileID: 0}
   inputReader: {fileID: 11400000, guid: 3d38885d799e9564d8fa2e0592fcaafa, type: 2}
+  panelOpener: {fileID: 0}
+  speaker: {fileID: 0}
+  introManager: {fileID: 0}
+  scene2: {fileID: 0}
 --- !u!1 &1102036190
 GameObject:
   m_ObjectHideFlags: 0
@@ -6583,10 +6589,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3517422458014903032, guid: 436305a44c3d908419253186084e310f, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3517422458014903032, guid: 436305a44c3d908419253186084e310f, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3517422458014903036, guid: 436305a44c3d908419253186084e310f, type: 3}

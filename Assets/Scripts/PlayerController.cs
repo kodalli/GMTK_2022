@@ -12,8 +12,10 @@ public enum PlayerState {
     Hit = 2,
 }
 
-
-public class PlayerController : MonoBehaviour {
+public interface IPlayer {
+    void TakeDamage();
+}
+public class PlayerController : MonoBehaviour, IPlayer {
     private static class Drivers {
         public const string IsMoving = "isMoving";
         public const string IsMovingHorizontal = "isMovingHorizontal";
@@ -28,6 +30,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private InputProvider inputProvider;
     [SerializeField] private InteractionLogic interactionLogic;
     [SerializeField] private new BoxCollider2D collider;
+    [SerializeField] private float PlayerHealth = 1000f;
     [SerializeField] private float walkSpeed = 7;
     [SerializeField] private float bulletForce = 20f;
     private readonly Stopwatch runStopwatch = new Stopwatch();
@@ -51,6 +54,18 @@ public class PlayerController : MonoBehaviour {
     // private bool movingRight;
     // private bool movingLeft;
 
+    public void TakeDamage() {
+        Debug.Log(PlayerHealth);
+
+        if (PlayerHealth > 0) {
+            PlayerHealth -= 10;
+        }
+        else {
+            GameManager.Instance.LoadCasinoScene1();
+        }
+    }
+    
+    
     private void Awake() {
         inputProvider.EnableInput();
         

@@ -202,9 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459a7069102068b46ba7003a40dd8b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrianglesPrefab: {fileID: 0}
-  TriangleMoveDir: {x: 4, y: 1}
-  projectileSpeed: 4
+  TrianglesPrefab: {fileID: 3349179367635889699, guid: df9f14ece59e309459b737e0995421b1, type: 3}
 --- !u!114 &877511763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,6 +218,38 @@ MonoBehaviour:
   homingProj1: {fileID: 2665171675989260175, guid: 87fc6d5ca565f6e49a321a0d02db25a1, type: 3}
   timerEnd: 10
   projs: 3
+--- !u!114 &877511764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877511761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6700679b6c5f814ea6cd369fe408810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  speed: 2
+  waypoints: []
+--- !u!114 &877511765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877511761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a846ebcc3c3e1424682703bc19770908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 9151873847039176510, guid: e722dfd6baa59284187c59c61c64623a, type: 3}
+  bulletsAmount: 10
+  startAngle: 0
+  endAngle: 360
+  angle: 0
 --- !u!1001 &950520329
 PrefabInstance:
   m_ObjectHideFlags: 0
