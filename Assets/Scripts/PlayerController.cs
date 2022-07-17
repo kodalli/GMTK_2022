@@ -34,11 +34,11 @@ public class PlayerController : MonoBehaviour,IPlayer {
         Debug.Log(PlayerHealth);
         if (PlayerHealth > 0)
         {
+            Flash();
             PlayerHealth -= 10;
-            
         }
-        else
-        {
+        else {
+            GameManager.Instance.justDied = true;
             GameManager.Instance.LoadCasinoScene1();
         }
     }
