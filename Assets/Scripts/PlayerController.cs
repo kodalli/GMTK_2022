@@ -39,7 +39,6 @@ public class PlayerController : MonoBehaviour,IPlayer {
         }
         else
         {
-            Debug.Log("DEAD!");
             GameManager.Instance.LoadCasinoScene1();
         }
     }
