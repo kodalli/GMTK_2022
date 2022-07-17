@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9021138994781870681}
   - component: {fileID: -478258586341213617}
   - component: {fileID: -3992995285004980810}
+  - component: {fileID: 7056545261726259523}
   m_Layer: 0
   m_Name: PlusBullet
   m_TagString: Untagged
@@ -118,3 +119,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeSpan: 11
+--- !u!114 &7056545261726259523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9151873847039176510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad4a64f8d6c64e44bffa4474405461f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 15

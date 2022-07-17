@@ -27,6 +27,7 @@ public class HomingExplosion : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         Vector2 face = (player.transform.position - transform.position).normalized;
         this.GetComponent<Rigidbody2D>().AddForce(face * speed, ForceMode2D.Impulse);
+        
     }
 
     // Update is called once per frame
@@ -36,8 +37,6 @@ public class HomingExplosion : MonoBehaviour
         {
             Invoke("Explode", 0f);
         }
-
-
     }
     private void Explode()
     {
@@ -56,6 +55,8 @@ public class HomingExplosion : MonoBehaviour
 
             angle += angleStep;
         }
+        Destroy(this.gameObject,0f);
+
     }
 
     IEnumerator updateOff()

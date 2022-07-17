@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8417810684209200818}
   - component: {fileID: -5997206931779696434}
   - component: {fileID: 2062183035586613028}
+  - component: {fileID: -1761410800283260383}
   m_Layer: 0
   m_Name: EnemyBullet 1
   m_TagString: Untagged
@@ -149,13 +150,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306a55904d8eb4f46bc3af1fc1c8473d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8731100576187945935, guid: 542158b8617ceec4f94086ba78aab3d0, type: 3}
+  bulletPrefab: {fileID: 2472191572421389666, guid: 7109f001cc510b444a3d66a75fc334e1, type: 3}
   bulletsAmount: 10
-  delay: 2.5
+  delay: 1.5
   startAngle: 0
   endAngle: 360
   angle: 0
-  speed: 10
+  speed: 15.58
   updateOn: 1
 --- !u!114 &2062183035586613028
 MonoBehaviour:
@@ -170,3 +171,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeSpan: 2.51
+--- !u!114 &-1761410800283260383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2665171675989260175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad4a64f8d6c64e44bffa4474405461f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 1.501

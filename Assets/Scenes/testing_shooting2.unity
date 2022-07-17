@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459a7069102068b46ba7003a40dd8b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrianglesPrefab: {fileID: 0}
+  TrianglesPrefab: {fileID: 3349179367635889699, guid: df9f14ece59e309459b737e0995421b1, type: 3}
 --- !u!114 &877511763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,8 +276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   homingProj1: {fileID: 2665171675989260175, guid: 87fc6d5ca565f6e49a321a0d02db25a1, type: 3}
-  timerEnd: 10
-  projs: 3
+  timerEnd: 4
+  projs: 5
 --- !u!114 &877511764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6700679b6c5f814ea6cd369fe408810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 1000
   speed: 10
   waypoints:
   - {fileID: 778435555}
@@ -331,11 +331,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3517422458014903036, guid: 436305a44c3d908419253186084e310f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.57
+      value: 30.36
       objectReference: {fileID: 0}
     - target: {fileID: 3517422458014903036, guid: 436305a44c3d908419253186084e310f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.417527
+      value: -4.48
       objectReference: {fileID: 0}
     - target: {fileID: 3517422458014903036, guid: 436305a44c3d908419253186084e310f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -534,7 +534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973311546}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.152391, y: 3.9536123, z: 0}
+  m_LocalPosition: {x: 22.1, y: 3.9536123, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
