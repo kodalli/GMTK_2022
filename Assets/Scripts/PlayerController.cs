@@ -45,8 +45,8 @@ public class PlayerController : MonoBehaviour {
     public PlayerState State { get; set; } = PlayerState.Movement;
     private Vector2 gunDirectionInput;
     private Vector2 gunDirection;
-    private bool movingRight;
-    private bool movingLeft;
+    // private bool movingRight;
+    // private bool movingLeft;
 
     private void Awake() {
         inputProvider.EnableInput();
@@ -61,12 +61,12 @@ public class PlayerController : MonoBehaviour {
         inputProvider.MousePosEvent += OnMouse;
         inputProvider.ShootEvent += Shoot;
         reanimator.AddListener(Drivers.MovingLeft, () => {
-            movingLeft = true;
-            movingRight = false;
+            // movingLeft = true;
+            // movingRight = false;
         });
         reanimator.AddListener(Drivers.MovingRight, () => {
-            movingRight = true;
-            movingLeft = false;
+            // movingRight = true;
+            // movingLeft = false;
         });
     }
 
@@ -74,12 +74,12 @@ public class PlayerController : MonoBehaviour {
         inputProvider.MousePosEvent -= OnMouse;
         inputProvider.ShootEvent -= Shoot;
         reanimator.RemoveListener(Drivers.MovingLeft, () => {
-            movingLeft = true;
-            movingRight = false;
+            // movingLeft = true;
+            // movingRight = false;
         });
         reanimator.RemoveListener(Drivers.MovingRight, () => {
-            movingRight = true;
-            movingLeft = false;
+            // movingRight = true;
+            // movingLeft = false;
         });
     }
 
