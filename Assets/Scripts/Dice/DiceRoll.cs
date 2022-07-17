@@ -11,12 +11,11 @@ namespace Dice {
     public class DiceRoll : MonoBehaviour {
         public List<Card.Card> buffs = new List<Card.Card>();
         public List<Card.Card> debuffs = new List<Card.Card>();
-        public List<Card.Card> activeStatuses = new List<Card.Card>();
         public CardRenderer renderer;
         public TextMeshProUGUI diceText;
 
         private void Start() {
-            activeStatuses.Clear();
+            GameManager.Instance.activeStatuses.Clear();
             var rolls = GameManager.Instance.rolls;
             var count = GameManager.Instance.diceCount;
             diceText.SetText("ROLLS LEFT: " + (count - rolls)); 
@@ -37,7 +36,7 @@ namespace Dice {
             GameManager.Instance.rolls = rolls;
             var card = SelectBuffOrDebuff();
             card.effectStrength = rolls;
-            activeStatuses.Add(card);
+            GameManager.Instance.activeStatuses.Add(card);
             renderer.Render(card);
 
             if (rolls < count) return;

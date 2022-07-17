@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour {
 
     public int rolls = 0;
     public int diceCount = 1;
+    public List<Card.Card> activeStatuses = new List<Card.Card>();
 
     public static GameManager Instance { get; private set; }
 
