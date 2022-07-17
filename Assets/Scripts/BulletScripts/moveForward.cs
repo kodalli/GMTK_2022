@@ -12,14 +12,6 @@ public class moveForward : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         this.GetComponent<Rigidbody2D>().AddForce(Dir*speed,ForceMode2D.Impulse);
-        Destroy(this, 3f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
