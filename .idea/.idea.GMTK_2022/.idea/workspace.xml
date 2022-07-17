@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9c774085-9ee6-4d08-aeb6-54a58b5e137b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GMTK_2022/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GMTK_2022/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BulletStuff/OrangeBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BulletStuff/OrangeBullet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BulletScripts/TimedDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BulletScripts/BulletController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BulletScripts/TimedDeath.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BulletScripts/BulletController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SlimyDemonController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SlimyDemonController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
