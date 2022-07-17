@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Casino_Final.unity
     guid: 959cad20b5618a4449026118ebf454bc
+  - enabled: 1
+    path: Assets/Scenes/testing_shooting2.unity
+    guid: 6a05de89ff71c334e93b58e59e101ec2
   m_configObjects: {}
