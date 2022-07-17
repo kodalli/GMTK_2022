@@ -12,17 +12,17 @@ public class Turret : MonoBehaviour
     [SerializeField]
     private float startAngle = 0f, endAngle = 360f;
 
-    
+    public float angle = 0f;
 
     void Start()
     {
         InvokeRepeating("Fire", 0f, 1f);
     }
-    
+
     private void Fire ()
     {
         float angleStep = (endAngle - startAngle) / bulletsAmount;
-        float angle = startAngle;
+        
         for (int i = 0; i < bulletsAmount + 1; i++)
         {
             float bulletDirX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180);
