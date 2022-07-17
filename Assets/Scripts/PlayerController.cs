@@ -39,9 +39,9 @@ public class PlayerController : MonoBehaviour,IPlayer {
         }
         else
         {
+            Debug.Log("DEAD!");
             GameManager.Instance.LoadCasinoScene1();
         }
-        throw new NotImplementedException();
     }
 
     [SerializeField] private InputProvider inputProvider;
