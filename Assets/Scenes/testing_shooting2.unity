@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a846ebcc3c3e1424682703bc19770908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8731100576187945935, guid: 542158b8617ceec4f94086ba78aab3d0, type: 3}
+  bulletPrefab: {fileID: 9151873847039176510, guid: e722dfd6baa59284187c59c61c64623a, type: 3}
   bulletsAmount: 10
   startAngle: 0
   endAngle: 360
@@ -321,6 +321,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3517422458014902978, guid: 436305a44c3d908419253186084e310f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3517422458014903032, guid: 436305a44c3d908419253186084e310f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -369,6 +373,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3517422458014903038, guid: 436305a44c3d908419253186084e310f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517422458014903039, guid: 436305a44c3d908419253186084e310f, type: 3}
+      propertyPath: PlayerHealth
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 436305a44c3d908419253186084e310f, type: 3}
 --- !u!1 &1032091277
@@ -410,7 +422,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4390828761628540021, guid: 1914d1a87fc21b4438f63cde9a2471e8, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4390828761628540021, guid: 1914d1a87fc21b4438f63cde9a2471e8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -568,5 +580,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
