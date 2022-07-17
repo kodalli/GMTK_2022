@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3517422458014903039}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,7 +181,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputProvider: {fileID: 11400000, guid: 3d38885d799e9564d8fa2e0592fcaafa, type: 2}
-  runSpeed: 10
   walkSpeed: 7
   bulletForce: 20
   firePoint: {fileID: 5139518699378650189}
