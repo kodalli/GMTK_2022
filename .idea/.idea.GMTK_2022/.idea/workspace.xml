@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c774085-9ee6-4d08-aeb6-54a58b5e137b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GMTK_2022/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GMTK_2022/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/idle_down.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/idle_down.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/idle_left.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/idle_left.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/idle_right.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/idle_right.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/idle_up.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/idle_up.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/walk-down.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/walk-down.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/walk-left.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/walk-left.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/walk-right.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/walk-right.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/walk-up.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Reanimator/Player/Animations/walk-up.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Casino.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Casino.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Common/Helper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Common/Helper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/InteractionLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/InteractionLogic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/bulletpooler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/bulletpooler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-    </list>
+    <list default="true" id="9c774085-9ee6-4d08-aeb6-54a58b5e137b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
