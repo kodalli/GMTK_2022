@@ -3,19 +3,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlimyDemonController : MonoBehaviour {
+public interface IEnemy {
+    void TakeDamage();
+}
+public class SlimyDemonController : MonoBehaviour, IEnemy {
+    private SpriteRenderer SpriteRenderer;
+    
+    [SerializeField] private float health = 100;
     [SerializeField] private float speed = 2f;
     [SerializeField] private List<Transform> waypoints;
 
     private int waypointIndex;
     private bool inRoutine;
     void Update() {
-        if (!inRoutine) {
-            inRoutine = true;
-            StartCoroutine(MoveEnemy());
-        }
+        // if (!inRoutine) {
+        //     inRoutine = true;
+        //     StartCoroutine(MoveEnemy());
+        // }
     }
 
+    public void TakeDamage() {
+        health -= 10;
+        
+        if (health == 0) {
+            Destroy(this.gameObject);
+        }
+    }
     IEnumerator MoveEnemy() {
 
         float step = speed * Time.deltaTime;
