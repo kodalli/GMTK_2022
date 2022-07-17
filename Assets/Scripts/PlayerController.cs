@@ -41,7 +41,6 @@ public class PlayerController : MonoBehaviour,IPlayer {
         {
             GameManager.Instance.LoadCasinoScene1();
         }
-        throw new NotImplementedException();
     }
 
     [SerializeField] private InputProvider inputProvider;

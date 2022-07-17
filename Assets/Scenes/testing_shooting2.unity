@@ -420,6 +420,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 877511764, guid: 1914d1a87fc21b4438f63cde9a2471e8, type: 3}
+      propertyPath: waypoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 877511764, guid: 1914d1a87fc21b4438f63cde9a2471e8, type: 3}
+      propertyPath: waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 778435555}
+    - target: {fileID: 877511764, guid: 1914d1a87fc21b4438f63cde9a2471e8, type: 3}
+      propertyPath: waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1032091278}
+    - target: {fileID: 877511764, guid: 1914d1a87fc21b4438f63cde9a2471e8, type: 3}
+      propertyPath: waypoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 263184207}
+    - target: {fileID: 877511764, guid: 1914d1a87fc21b4438f63cde9a2471e8, type: 3}
+      propertyPath: waypoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 2107233078}
     - target: {fileID: 4390828761628540021, guid: 1914d1a87fc21b4438f63cde9a2471e8, type: 3}
       propertyPath: m_RootOrder
       value: 3
