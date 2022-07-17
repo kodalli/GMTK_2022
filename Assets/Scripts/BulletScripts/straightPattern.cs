@@ -5,6 +5,8 @@ using UnityEngine;
 public class straightPattern : MonoBehaviour
 {
     public GameObject homingProj1;
+    [SerializeField]
+    public AudioClip pewSound;
 
     private float timer = 0f;
     public float timerEnd = 10f;
@@ -27,6 +29,7 @@ public class straightPattern : MonoBehaviour
         for (int i = 0; i < projs; i++)
         {
             Instantiate(homingProj1, transform.position,transform.rotation);
+            SoundManager.Instance.PlaySound(pewSound);
             yield return new WaitForSeconds(.2f);
         }
     }
