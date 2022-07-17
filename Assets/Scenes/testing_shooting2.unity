@@ -468,6 +468,14 @@ PrefabInstance:
       propertyPath: PlayerHealth
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 3517422458014903039, guid: 436305a44c3d908419253186084e310f, type: 3}
+      propertyPath: takeDamageMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 8557fc764835448489c68bbb76335eba, type: 2}
+    - target: {fileID: 3517422458014903039, guid: 436305a44c3d908419253186084e310f, type: 3}
+      propertyPath: spritesDefault
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 436305a44c3d908419253186084e310f, type: 3}
 --- !u!1001 &1006660017
@@ -479,7 +487,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2845576058537060925, guid: 0445fe3c27060e64080d7191835bf508, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2845576058537060925, guid: 0445fe3c27060e64080d7191835bf508, type: 3}
       propertyPath: m_LocalPosition.x

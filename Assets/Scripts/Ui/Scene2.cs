@@ -14,6 +14,7 @@ public class Scene2 : MonoBehaviour {
     public GameObject dice;
     private bool justDied;
     public DialogueContainer secondaryDialogue;
+    private bool reachedSecondDialogue;
 
     private void Start() {
         reachedFirstDialogue = GameManager.Instance.reachedFirstDialogueTuxedo;
@@ -22,7 +23,7 @@ public class Scene2 : MonoBehaviour {
         if (justDied) {
             GameManager.Instance.diceCount++;
         }
-
+        reachedSecondDialogue = false;
         GameManager.Instance.rolls = 0;
     }
 
@@ -37,11 +38,15 @@ public class Scene2 : MonoBehaviour {
     }
     
     public void StartDialogue() {
+        if (reachedSecondDialogue && GameManager.Instance.rolls > 1) {
+            ChangeToBattle();
+            return;
+        }
         if (justDied) {
            //  set the new dialogue; 
            reader.Dialogue = secondaryDialogue;
-        }
-        if (reachedFirstDialogue) {
+           reachedSecondDialogue = true;
+        } else if (reachedFirstDialogue) {
             ChangeToBattle(); 
             return;
         }
@@ -51,7 +56,7 @@ public class Scene2 : MonoBehaviour {
     }
 
     public void GoNext() {
-        if (reachedFirstDialogue) {
+        if (reachedFirstDialogue && !justDied) {
             ChangeToBattle();
         }
         else {
