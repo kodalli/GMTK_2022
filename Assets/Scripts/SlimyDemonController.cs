@@ -9,7 +9,7 @@ public interface IEnemy {
 public class SlimyDemonController : MonoBehaviour, IEnemy {
     private SpriteRenderer SpriteRenderer;
     
-    [SerializeField] private float health = 100;
+    [SerializeField] private float health = 1000;
     [SerializeField] private float speed = 6f;
     [SerializeField] private List<Transform> waypoints;
 
@@ -17,6 +17,7 @@ public class SlimyDemonController : MonoBehaviour, IEnemy {
     private bool inRoutine;
     void Start()
     {
+        health = 1000;
         transform.position = waypoints[0].transform.position;
     }
     void Update() {
@@ -27,6 +28,7 @@ public class SlimyDemonController : MonoBehaviour, IEnemy {
     }
 
     public void TakeDamage() {
+        Debug.Log(health);
         health -= 10;
         
         if (health == 0) {

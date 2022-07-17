@@ -13,6 +13,10 @@ public class HomingExplosion : MonoBehaviour
 
     [SerializeField]
     private float startAngle = 0f, endAngle = 360f;
+    [SerializeField]
+    private AudioClip explosion;
+    
+
 
     public float angle = 0f;
     // Start is called before the first frame update
@@ -40,6 +44,7 @@ public class HomingExplosion : MonoBehaviour
     }
     private void Explode()
     {
+        SoundManager.Instance.PlaySound(explosion);
         float angleStep = (endAngle - startAngle) / bulletsAmount;
         for (int i = 0; i < bulletsAmount + 1; i++)
         {

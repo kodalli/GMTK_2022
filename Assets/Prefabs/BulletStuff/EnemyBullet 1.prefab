@@ -125,6 +125,7 @@ MonoBehaviour:
   delay: 1.5
   startAngle: 0
   endAngle: 360
+  explosion: {fileID: 8300000, guid: 2e8fbb5dc6bd22e47a138fcf99177c2f, type: 3}
   angle: 0
   speed: 15.58
   updateOn: 1
