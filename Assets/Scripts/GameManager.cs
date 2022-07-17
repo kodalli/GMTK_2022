@@ -2,7 +2,9 @@
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
-    private const int CasinoIndex = 2;
+    private const int CasinoIndex1 = 2;
+    private const int CasinoIndex2 = 4;
+    private const int CasinoIndex3 = 5;
     private const int IntroIndex = 1;
     private const int MenuIndex = 0;
     private const int Battle1Index = 3;
@@ -28,8 +30,16 @@ public class GameManager : MonoBehaviour {
         // LoadMainMenu();
     }
 
-    public void LoadCasinoScene() {
-        SceneManager.LoadScene(CasinoIndex);
+    public void LoadCasinoScene1() {
+        SceneManager.LoadScene(CasinoIndex1);
+    }
+
+    public void LoadCasinoScene2() {
+        SceneManager.LoadScene(CasinoIndex2);
+    }
+
+    public void LoadCasinoScene3() {
+        SceneManager.LoadScene(CasinoIndex3);
     }
 
     public void LoadIntroScene() {

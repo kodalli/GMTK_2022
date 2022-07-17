@@ -19,7 +19,7 @@ namespace Ui {
                 return;
             }
 
-            GameManager.Instance.LoadCasinoScene();
+            GameManager.Instance.LoadCasinoScene1();
         }
 
         private void Toggle(bool state) {
