@@ -12,10 +12,13 @@ public enum PlayerState {
     Hit = 2,
 }
 
-public interface IPlayer {
+public interface IPlayer
+{
     void TakeDamage();
 }
-public class PlayerController : MonoBehaviour, IPlayer {
+public class PlayerController : MonoBehaviour,IPlayer {
+    [SerializeField]
+    public int PlayerHealth = 200;
     private static class Drivers {
         public const string IsMoving = "isMoving";
         public const string IsMovingHorizontal = "isMovingHorizontal";
@@ -26,11 +29,24 @@ public class PlayerController : MonoBehaviour, IPlayer {
         public const string MovingLeft = "movingLeft";
     }
 
+    public void TakeDamage()
+    {
+        Debug.Log(PlayerHealth);
+        if (PlayerHealth > 0)
+        {
+            PlayerHealth -= 10;
+            
+        }
+        else
+        {
+            GameManager.Instance.LoadCasinoScene1();
+        }
+        throw new NotImplementedException();
+    }
 
     [SerializeField] private InputProvider inputProvider;
     [SerializeField] private InteractionLogic interactionLogic;
     [SerializeField] private new BoxCollider2D collider;
-    [SerializeField] private float PlayerHealth = 1000f;
     [SerializeField] private float walkSpeed = 7;
     [SerializeField] private float bulletForce = 20f;
     private readonly Stopwatch runStopwatch = new Stopwatch();
@@ -54,18 +70,6 @@ public class PlayerController : MonoBehaviour, IPlayer {
     // private bool movingRight;
     // private bool movingLeft;
 
-    public void TakeDamage() {
-        Debug.Log(PlayerHealth);
-
-        if (PlayerHealth > 0) {
-            PlayerHealth -= 10;
-        }
-        else {
-            GameManager.Instance.LoadCasinoScene1();
-        }
-    }
-    
-    
     private void Awake() {
         inputProvider.EnableInput();
         
