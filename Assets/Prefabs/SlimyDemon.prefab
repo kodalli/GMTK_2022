@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4780778376429375412}
   - component: {fileID: -6064301794723681055}
   m_Layer: 0
-  m_Name: Enemy2
-  m_TagString: Untagged
+  m_Name: SlimyDemon
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,5 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6700679b6c5f814ea6cd369fe408810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   speed: 2
   waypoints: []
