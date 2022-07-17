@@ -66,7 +66,7 @@ MonoBehaviour:
     DialogueText: 'But I''m not a fan of charity. '
     Position: {x: 334, y: 627}
   - NodeGUID: 1947a1a2-baca-4377-bb1c-b958229437e5
-    DialogueText: 'If you want to see the boss you''ll have to earn it. '
+    DialogueText: 'If you want to see your family you''ll have to earn it. '
     Position: {x: 334, y: 838}
   - NodeGUID: a00339d7-4286-409e-81cd-43d404e52db8
     DialogueText: 'Have this dice. '

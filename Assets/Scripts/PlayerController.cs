@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour,IPlayer {
     [SerializeField] private new BoxCollider2D collider;
     [SerializeField] private float walkSpeed = 7;
     [SerializeField] private float bulletForce = 20f;
+    [SerializeField] private Material takeDamageMat;
+    [SerializeField] private Material spritesDefault;
     private readonly Stopwatch runStopwatch = new Stopwatch();
 
     private InputState inputState => inputProvider;
@@ -65,33 +67,36 @@ public class PlayerController : MonoBehaviour,IPlayer {
 
     public PlayerState State { get; set; } = PlayerState.Movement;
     private Vector2 gunDirectionInput;
+
     private Vector2 gunDirection;
     // private bool movingRight;
     // private bool movingLeft;
 
     private void Awake() {
         inputProvider.EnableInput();
-        
+
         reanimator = GetComponent<Reanimator>();
         collisionDetection = GetComponent<CollisionDetection>();
         collider = GetComponent<BoxCollider2D>();
 
         gun = transform.Find("Gun").gameObject;
     }
+
     private void OnDrawGizmos() {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(collider.bounds.center, 2f);
     }
+
     private void OnEnable() {
         inputProvider.MousePosEvent += OnMouse;
         inputProvider.ShootEvent += Shoot;
         // reanimator.AddListener(Drivers.MovingLeft, () => {
-            // movingLeft = true;
-            // movingRight = false;
+        // movingLeft = true;
+        // movingRight = false;
         // });
         // reanimator.AddListener(Drivers.MovingRight, () => {
-            // movingRight = true;
-            // movingLeft = false;
+        // movingRight = true;
+        // movingLeft = false;
         // });
     }
 
@@ -100,12 +105,12 @@ public class PlayerController : MonoBehaviour,IPlayer {
         inputProvider.ShootEvent -= Shoot;
 
         // reanimator.RemoveListener(Drivers.MovingLeft, () => {
-            // movingLeft = true;
-            // movingRight = false;
+        // movingLeft = true;
+        // movingRight = false;
         // });
         // reanimator.RemoveListener(Drivers.MovingRight, () => {
-            // movingRight = true;
-            // movingLeft = false;
+        // movingRight = true;
+        // movingLeft = false;
         // });
     }
 
@@ -120,11 +125,30 @@ public class PlayerController : MonoBehaviour,IPlayer {
         reanimator.Set(Drivers.IsMovingRight, MovementDirection.x > 0);
         reanimator.Set(Drivers.IsMovingUp, MovementDirection.y > 0);
     }
+#if UNITY_EDITOR
+    void OnGUI() {
+        if (GUILayout.Button("Flash")) {
+            Flash();
+        }
+    }
+#endif
+    public void Flash() {
+        StartCoroutine(FlashDamage());
+    }
+
+    private IEnumerator FlashDamage() {
+        var spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.material = takeDamageMat;
+        yield return new WaitForSeconds(0.2f);
+        spriteRenderer.material = spritesDefault;
+    }
+
 
     private void Shoot() {
         if (gun == null || !gun.activeSelf) {
             return;
         }
+
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
