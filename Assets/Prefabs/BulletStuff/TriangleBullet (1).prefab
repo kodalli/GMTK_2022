@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8041268296975652481}
   - component: {fileID: 8041268296975652480}
   - component: {fileID: 8041268296975652483}
+  - component: {fileID: 2934231065630965137}
   m_Layer: 0
   m_Name: TriangleBullet (1)
   m_TagString: Untagged
@@ -119,3 +120,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   Dir: {x: -1, y: 0}
+--- !u!114 &2934231065630965137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8041268296975652482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0fa2891e645a794db2772efebf14a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeSpan: 20
