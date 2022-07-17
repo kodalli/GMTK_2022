@@ -27,7 +27,7 @@ public class Turret : MonoBehaviour
         {
             float bulletDirX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180);
             float bulletDirY = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180);
-
+            
             Vector3 bulletMoveVector = new Vector3(bulletDirX, bulletDirY, 0f);
             Vector2 bulletDir = (bulletMoveVector - transform.position).normalized;
 
