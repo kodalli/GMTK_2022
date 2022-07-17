@@ -14,9 +14,14 @@ public class Turret : MonoBehaviour
 
     public float angle = 0f;
 
+    [SerializeField]
+    private float speed = 4f;
+    [SerializeField]
+    private float frequency = 1f;
+
     void Start()
     {
-        InvokeRepeating("Fire", 0f, 1f);
+        InvokeRepeating("Fire", 0f, frequency);
     }
 
     private void Fire ()
@@ -33,7 +38,7 @@ public class Turret : MonoBehaviour
 
             GameObject bullet = Instantiate(bulletPrefab,transform.position, Quaternion.Euler(0f, 0f, 90f - angle));
             //bullet.transform.rotation =  Quaternion.Euler(0f,0f,90f-angle);
-            bullet.GetComponent<Rigidbody2D>().AddForce((bulletDir * 4f),ForceMode2D.Impulse);
+            bullet.GetComponent<Rigidbody2D>().AddForce((bulletDir * speed),ForceMode2D.Impulse);
             
 
             angle += angleStep;
