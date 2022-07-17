@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour {
     private const int Battle2Index = 3;
     private const int Battle3Index = 3;
 
+    public int rolls = 0;
+    public int diceCount = 1;
+
     public static GameManager Instance { get; private set; }
 
     private void Awake() {
