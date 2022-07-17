@@ -15,11 +15,15 @@ public class SlimyDemonController : MonoBehaviour, IEnemy {
 
     private int waypointIndex;
     private bool inRoutine;
+    void Start()
+    {
+        transform.position = waypoints[0].transform.position;
+    }
     void Update() {
-        // if (!inRoutine) {
-        //     inRoutine = true;
-        //     StartCoroutine(MoveEnemy());
-        // }
+         if (!inRoutine) {
+             inRoutine = true;
+             StartCoroutine(MoveEnemy());
+         }
     }
 
     public void TakeDamage() {
