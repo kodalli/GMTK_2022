@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c774085-9ee6-4d08-aeb6-54a58b5e137b" name="Default Changelist" comment="" />
+    <list default="true" id="9c774085-9ee6-4d08-aeb6-54a58b5e137b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ui/Scene1.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ui/Scene1.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GMTK_2022/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GMTK_2022/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Dialogue panel into canvas.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/Dialogue panel into canvas.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/enemy3 talking.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/enemy3 talking.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Casino.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Casino.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueBlock.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueBlock.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/Enemy1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/Enemy1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/Enemy2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/Enemy2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/Enemy3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/Enemy3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/Player.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/Player.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/V2/ButtonPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/V2/ButtonPrefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/V2/DialogueReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/V2/DialogueReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/V2/Level2Dialogue.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/V2/Level2Dialogue.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/game dialogue.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/game dialogue.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +54,7 @@
     <setting file="file://$PROJECT_DIR$/../IndieTalesGameJam/IndieTalesGameJam2021/Assets/Scripts/Dialogue/Runtime/DialogueNodeData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../IndieTalesGameJam/IndieTalesGameJam2021/Assets/Scripts/Dialogue/Runtime/CommentBlockData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/63/40f4dada/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../IndieTalesGameJam/IndieTalesGameJam2021/Assets/Scripts/DialogueReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SlimyDemonController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9c79dfaa81ca4dafa70d4219450af5e1c5400/89/400fdfa4/StyleSheet.cs" root0="SKIP_HIGHLIGHTING" />

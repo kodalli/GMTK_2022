@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour {
     private InputState inputState => inputProvider;
     private Vector2 MovementDirection => inputState.movementDirection;
     private Vector2 MouseDirection => inputState.mouseDirection;
+    public InputProvider InputProvider => inputProvider;
 
 
     private Reanimator reanimator;

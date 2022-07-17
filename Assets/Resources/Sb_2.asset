@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3b045ba31c4b189ec3fe8db4471315, type: 3}
+  m_Name: Sb_2
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: 30e550ae-c7e9-4bc1-965d-fae38de2064a
+    PortName: Next
+    TargetNodeGUID: 320dfe37-5230-4132-a78d-a04c26cffd29
+  - BaseNodeGUID: 320dfe37-5230-4132-a78d-a04c26cffd29
+    PortName: next
+    TargetNodeGUID: c3bfff6c-d9b1-4241-9f03-97343ede5837
+  - BaseNodeGUID: 320dfe37-5230-4132-a78d-a04c26cffd29
+    PortName: skip
+    TargetNodeGUID: 39c51e6a-feeb-423a-b7dd-a3a4dd3a2320
+  - BaseNodeGUID: c3bfff6c-d9b1-4241-9f03-97343ede5837
+    PortName: next
+    TargetNodeGUID: 39c51e6a-feeb-423a-b7dd-a3a4dd3a2320
+  DialogueNodeData:
+  - NodeGUID: c3bfff6c-d9b1-4241-9f03-97343ede5837
+    DialogueText: 'Have another die. I love seeing you get bad rolls. '
+    Position: {x: 202, y: 527}
+  - NodeGUID: 320dfe37-5230-4132-a78d-a04c26cffd29
+    DialogueText: 'Heh. Not so tough are ya. '
+    Position: {x: 202, y: 343}
+  - NodeGUID: 39c51e6a-feeb-423a-b7dd-a3a4dd3a2320
+    DialogueText: 
+    Position: {x: 687, y: 515}
+  ExposedProperties: []
+  CommentBlockData: []
