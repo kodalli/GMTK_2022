@@ -256,6 +256,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3517422458014903039, guid: 436305a44c3d908419253186084e310f, type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 1598277424}
+    - target: {fileID: 3517422458014903039, guid: 436305a44c3d908419253186084e310f, type: 3}
+      propertyPath: interactionLogic
+      value: 
+      objectReference: {fileID: 11400000, guid: e1c8e3b8fe80bed49ae9c47ae84d9243, type: 2}
     - target: {fileID: 6112718099798075167, guid: 436305a44c3d908419253186084e310f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -317,7 +325,8 @@ GameObject:
   - component: {fileID: 524992342}
   - component: {fileID: 524992341}
   - component: {fileID: 524992343}
-  m_Layer: 0
+  - component: {fileID: 524992344}
+  m_Layer: 8
   m_Name: rouletteTable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,6 +424,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.25, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &524992344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524992340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197315ed0b3faaa47b5a917819852798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredDistance: 0
+  isSpecialInteraction: 0
+  holdDuration: 1
+  holdInteract: 0
+  multipleUse: 0
+  isInteractable: 1
 --- !u!1001 &973936565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -585,6 +612,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8730adf56454249ae8176c50d61094f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rolls: 0
+  diceCount: 1
+  activeStatuses: []
+  reachedFirstDialogueTuxedo: 0
+  justDied: 0
 --- !u!4 &1552859584
 Transform:
   m_ObjectHideFlags: 0
@@ -611,6 +643,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e021a91d3bb64d8ab1792aa1afd3707c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1598277424 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3517422458014902978, guid: 436305a44c3d908419253186084e310f, type: 3}
+  m_PrefabInstance: {fileID: 265879225}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1689101070
 GameObject:
   m_ObjectHideFlags: 0

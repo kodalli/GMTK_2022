@@ -14,16 +14,19 @@ namespace MainGame.DialogueGraph {
         [SerializeField] private Button choicePrefab;
 
         [SerializeField] private Transform buttonContainer;
+        public GameObject panelContainer;
 
-        //[SerializeField] private AudioClip sound;
+        [SerializeField] private AudioClip sound;
         [SerializeField] private InputProvider inputReader;
         [SerializeField] private PanelOpener panelOpener;
         [SerializeField] private Talking speaker;
+        [SerializeField] private Scene1 introManager;
+        [SerializeField] private Scene2 scene2;
 
         public DialogueContainer Dialogue {
             set => dialogue = value;
         }
-        
+
         public Talking Speaker {
             set => speaker = value;
         }
@@ -32,16 +35,21 @@ namespace MainGame.DialogueGraph {
         private bool isTyping;
 
         private void Start() {
+            if (panelContainer != null) {
+                panelContainer.SetActive(false);
+            }
+            else {
+                Init();
+            }
+        }
+
+        public void Init() {
             inputReader = GameObject.FindGameObjectWithTag("Player")
                 .GetComponent<PlayerController>().InputProvider;
             inputReader.DisableInput();
-            TogglePanel();
+            panelOpener.OpenPanel();
             var narrativeData = dialogue.NodeLinks.First(); //Entrypoint node
             ProceedToNarrative(narrativeData.TargetNodeGUID);
-        }
-
-        public void TogglePanel() {
-           panelOpener.OpenPanel(); 
         }
 
         private void ProceedToNarrative(string guid) {
@@ -58,13 +66,14 @@ namespace MainGame.DialogueGraph {
                 button.GetComponentInChildren<Text>().text = choice.PortName;
                 button.onClick.AddListener(() => ProceedToNarrative(choice.TargetNodeGUID));
                 button.onClick.AddListener(() => Debug.Log("click"));
-                // button.onClick.AddListener(() => SoundManager.Instance.PlayButtonClickSound());
+                button.onClick.AddListener(() => SoundManager.Instance.PlayButtonClickSound());
                 buttonList.Add(button);
             }
 
             if (speaker != null) {
                 speaker.ToggleTalk(true);
             }
+
             StartCoroutine(PlayDialogue(text));
         }
 
@@ -75,17 +84,30 @@ namespace MainGame.DialogueGraph {
             while (count <= text.Length) {
                 yield return new WaitForSeconds(0.04f);
                 dialogueText.text = text.Substring(0, count);
-                // SoundManager.Instance.PlaySound(sound);
+                if (sound != null) {
+                    SoundManager.Instance.PlaySound(sound);
+                }
                 count++;
             }
 
             ToggleButton(true);
 
-            speaker.ToggleTalk(false);
-            
+            if (speaker != null) {
+                speaker.ToggleTalk(false);
+            }
+
             if (buttonList.Count < 1) {
                 inputReader.EnableInput();
-                gameObject.SetActive(false);
+                panelOpener.ClosePanel();
+                if (introManager != null) {
+                    // Intro
+                    introManager.FamilyInToScene();
+                } else if (scene2 != null) {
+                    scene2.GoNext();
+                }
+                else {
+                    gameObject.SetActive(false);
+                }
             }
         }
 

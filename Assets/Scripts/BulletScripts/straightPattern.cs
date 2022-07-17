@@ -27,7 +27,7 @@ public class straightPattern : MonoBehaviour
         for (int i = 0; i < projs; i++)
         {
             Instantiate(homingProj1, transform.position,transform.rotation);
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(.2f);
         }
     }
 }

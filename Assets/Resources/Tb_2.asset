@@ -36,13 +36,14 @@ MonoBehaviour:
     DialogueText: 
     Position: {x: 691, y: 467}
   - NodeGUID: a2acee8a-99e3-4044-9289-c483c1d521d5
-    DialogueText: Dialogue Node
+    DialogueText: 'Pathetic... '
     Position: {x: 267, y: 216}
-  - NodeGUID: c51ea828-0d1e-4f7d-b8d9-8cd0cf8b6554
-    DialogueText: Dialogue Node
-    Position: {x: 267, y: 443}
   - NodeGUID: f39570f1-6b95-4467-98da-2c0e849b57a9
-    DialogueText: Dialogue Node
+    DialogueText: 'Be careful not to roll the dice too much though. Hehe... '
     Position: {x: 267, y: 658}
+  - NodeGUID: c51ea828-0d1e-4f7d-b8d9-8cd0cf8b6554
+    DialogueText: Your death made me laugh so here's another die. Dont' forget, they
+      stack.
+    Position: {x: 210, y: 430}
   ExposedProperties: []
   CommentBlockData: []

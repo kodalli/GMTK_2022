@@ -9,9 +9,18 @@ public class moveForward : MonoBehaviour
     [SerializeField]
     private Vector2 Dir = new Vector2(-1f, 0f);
 
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
+        
         this.GetComponent<Rigidbody2D>().AddForce(Dir*speed,ForceMode2D.Impulse);
+
     }
+
+
+
+
 }
+
+

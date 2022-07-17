@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Shoot() {
-        if (!gun.activeSelf) {
+        if (gun == null || !gun.activeSelf) {
             return;
         }
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
