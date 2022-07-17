@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
     private const int CasinoIndex1 = 2;
@@ -18,6 +19,10 @@ public class GameManager : MonoBehaviour {
     public bool reachedFirstDialogueTuxedo = false;
     public bool justDied = false;
 
+    private GameObject menuCanvas;
+    private GameObject startButton;
+    private GameObject exitButton;
+
     public static GameManager Instance { get; private set; }
 
     private void Awake() {
@@ -32,6 +37,14 @@ public class GameManager : MonoBehaviour {
 
     private void Start() {
         // LoadMainMenu();
+        menuCanvas = GameObject.Find("MenuCanvas");
+
+        if (menuCanvas == null) return;
+        startButton = menuCanvas.FindInChildren("StartButton");
+        exitButton = menuCanvas.FindInChildren("ExitButton");
+            
+        startButton.GetComponent<Button>().onClick.AddListener(LoadIntroScene);
+        exitButton.GetComponent<Button>().onClick.AddListener(Application.Quit);
     }
 
     public void LoadCasinoScene1() {
