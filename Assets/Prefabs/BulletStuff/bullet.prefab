@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 3799742269834395935}
   - component: {fileID: 5098992801998982028}
   - component: {fileID: 1857969951000547282}
-  - component: {fileID: -4537560919413069300}
+  - component: {fileID: 2968734091049349842}
+  - component: {fileID: 7953507153880501218}
+  - component: {fileID: -2607342115128505013}
+  - component: {fileID: -6681905128763983302}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Untagged
@@ -27,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8731100576187945935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -2.38, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.1033, y: -2.2406, z: 0}
+  m_LocalScale: {x: 1.2789, y: 1.2789, z: 1.2789}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -105,7 +108,65 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &-4537560919413069300
+--- !u!114 &2968734091049349842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8731100576187945935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad4a64f8d6c64e44bffa4474405461f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 15
+--- !u!114 &7953507153880501218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8731100576187945935}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71bd2f7a426ca848989bd26a0b39284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeSpan: 20
+--- !u!60 &-2607342115128505013
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8731100576187945935}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.8125, y: 1}
+    newSize: {x: 0.8125, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.19522454, y: 0.49040788}
+      - {x: -0.017771244, y: -0.0046725664}
+      - {x: -0.18563247, y: -0.5}
+      - {x: 0.12792848, y: -0.50479597}
+      - {x: 0.26236898, y: -0.32719138}
+      - {x: 0.42653865, y: 0.0518585}
+      - {x: 0.10409984, y: 0.5143881}
+--- !u!114 &-6681905128763983302
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,4 +178,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0fa2891e645a794db2772efebf14a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeSpan: 12
+  lifeSpan: 20
+  isEnemyBullet: 1

@@ -10,16 +10,20 @@ public class SlimyDemonController : MonoBehaviour, IEnemy {
     private SpriteRenderer SpriteRenderer;
     
     [SerializeField] private float health = 100;
-    [SerializeField] private float speed = 2f;
+    [SerializeField] private float speed = 6f;
     [SerializeField] private List<Transform> waypoints;
 
     private int waypointIndex;
     private bool inRoutine;
+    void Start()
+    {
+        transform.position = waypoints[0].transform.position;
+    }
     void Update() {
-        // if (!inRoutine) {
-        //     inRoutine = true;
-        //     StartCoroutine(MoveEnemy());
-        // }
+         if (!inRoutine) {
+             inRoutine = true;
+             StartCoroutine(MoveEnemy());
+         }
     }
 
     public void TakeDamage() {
@@ -38,7 +42,7 @@ public class SlimyDemonController : MonoBehaviour, IEnemy {
         // Check if the position of the cube and sphere are approximately equal.
         if (Vector3.Distance(transform.position, waypoints[waypointIndex].transform.position) < 0.001f) {
             waypointIndex += 1;
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(8f);
         }
 
         if (waypointIndex == waypoints.Count) {

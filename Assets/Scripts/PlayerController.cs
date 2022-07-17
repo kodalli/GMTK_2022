@@ -12,8 +12,13 @@ public enum PlayerState {
     Hit = 2,
 }
 
-
-public class PlayerController : MonoBehaviour {
+public interface IPlayer
+{
+    void TakeDamage();
+}
+public class PlayerController : MonoBehaviour,IPlayer {
+    [SerializeField]
+    public int PlayerHealth = 200;
     private static class Drivers {
         public const string IsMoving = "isMoving";
         public const string IsMovingHorizontal = "isMovingHorizontal";
@@ -24,6 +29,20 @@ public class PlayerController : MonoBehaviour {
         public const string MovingLeft = "movingLeft";
     }
 
+    public void TakeDamage()
+    {
+        Debug.Log(PlayerHealth);
+        if (PlayerHealth > 0)
+        {
+            PlayerHealth -= 10;
+            
+        }
+        else
+        {
+            GameManager.Instance.LoadCasinoScene();
+        }
+        throw new NotImplementedException();
+    }
 
     [SerializeField] private InputProvider inputProvider;
     [SerializeField] private InteractionLogic interactionLogic;
