@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour,IPlayer {
         }
         else
         {
-            GameManager.Instance.LoadCasinoScene();
+            GameManager.Instance.LoadCasinoScene1();
         }
         throw new NotImplementedException();
     }
