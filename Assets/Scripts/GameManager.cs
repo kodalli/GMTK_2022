@@ -2,12 +2,13 @@
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
-    [SerializeField] private int casinoIndex;
-    [SerializeField] private int introIndex;
-    [SerializeField] private int menuIndex;
-    [SerializeField] private int battle1Index;
-    [SerializeField] private int battle2Index;
-    [SerializeField] private int battle3Index;
+    private const int CasinoIndex = 2;
+    private const int IntroIndex = 1;
+    private const int MenuIndex = 0;
+    private const int Battle1Index = 3;
+    private const int Battle2Index = 3;
+    private const int Battle3Index = 3;
+
     public static GameManager Instance { get; private set; }
 
     private void Awake() {
@@ -25,26 +26,26 @@ public class GameManager : MonoBehaviour {
     }
 
     public void LoadCasinoScene() {
-        SceneManager.LoadScene(casinoIndex);
+        SceneManager.LoadScene(CasinoIndex);
     }
 
     public void LoadIntroScene() {
-        SceneManager.LoadScene(introIndex);
+        SceneManager.LoadScene(IntroIndex);
     }
 
     public void LoadMainMenu() {
-        SceneManager.LoadScene(menuIndex);
+        SceneManager.LoadScene(MenuIndex);
     }
 
     public void LoadBattleScene1() {
-        SceneManager.LoadScene(battle1Index);
+        SceneManager.LoadScene(Battle1Index);
     }
 
     public void LoadBattleScene2() {
-        SceneManager.LoadScene(battle2Index);
+        SceneManager.LoadScene(Battle2Index);
     }
 
     public void LoadBattleScene3() {
-        SceneManager.LoadScene(battle3Index);
+        SceneManager.LoadScene(Battle3Index);
     }
 }

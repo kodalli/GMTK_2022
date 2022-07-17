@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3b045ba31c4b189ec3fe8db4471315, type: 3}
+  m_Name: Tb_1
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: 848bb4c9-7404-4c53-bc5d-0f4d3b78c43b
+    PortName: Next
+    TargetNodeGUID: 1dc08804-304d-4949-9fde-4829cf331035
+  - BaseNodeGUID: 1dc08804-304d-4949-9fde-4829cf331035
+    PortName: next
+    TargetNodeGUID: f73d33ff-9290-4a67-bee1-f8b34f491618
+  - BaseNodeGUID: f73d33ff-9290-4a67-bee1-f8b34f491618
+    PortName: next
+    TargetNodeGUID: 602b63c2-227f-4576-bc25-9d85f6e3305a
+  - BaseNodeGUID: 602b63c2-227f-4576-bc25-9d85f6e3305a
+    PortName: next
+    TargetNodeGUID: 1947a1a2-baca-4377-bb1c-b958229437e5
+  - BaseNodeGUID: 1947a1a2-baca-4377-bb1c-b958229437e5
+    PortName: next
+    TargetNodeGUID: a00339d7-4286-409e-81cd-43d404e52db8
+  - BaseNodeGUID: 75cebfcd-ef53-446c-bb19-f2fe57c37c36
+    PortName: next
+    TargetNodeGUID: d06be6a5-3dcf-4f9b-86c9-ff5440bc4ffb
+  - BaseNodeGUID: a00339d7-4286-409e-81cd-43d404e52db8
+    PortName: next
+    TargetNodeGUID: 75cebfcd-ef53-446c-bb19-f2fe57c37c36
+  - BaseNodeGUID: 75cebfcd-ef53-446c-bb19-f2fe57c37c36
+    PortName: skip
+    TargetNodeGUID: 64afa96f-1316-4bff-8891-3c2ef1d5a7c0
+  - BaseNodeGUID: d06be6a5-3dcf-4f9b-86c9-ff5440bc4ffb
+    PortName: next
+    TargetNodeGUID: 64afa96f-1316-4bff-8891-3c2ef1d5a7c0
+  - BaseNodeGUID: a00339d7-4286-409e-81cd-43d404e52db8
+    PortName: skip
+    TargetNodeGUID: 64afa96f-1316-4bff-8891-3c2ef1d5a7c0
+  - BaseNodeGUID: 1947a1a2-baca-4377-bb1c-b958229437e5
+    PortName: skip
+    TargetNodeGUID: 64afa96f-1316-4bff-8891-3c2ef1d5a7c0
+  - BaseNodeGUID: 602b63c2-227f-4576-bc25-9d85f6e3305a
+    PortName: skip
+    TargetNodeGUID: 64afa96f-1316-4bff-8891-3c2ef1d5a7c0
+  - BaseNodeGUID: f73d33ff-9290-4a67-bee1-f8b34f491618
+    PortName: skip
+    TargetNodeGUID: 64afa96f-1316-4bff-8891-3c2ef1d5a7c0
+  - BaseNodeGUID: 1dc08804-304d-4949-9fde-4829cf331035
+    PortName: skip
+    TargetNodeGUID: 64afa96f-1316-4bff-8891-3c2ef1d5a7c0
+  DialogueNodeData:
+  - NodeGUID: 4174ef62-d48d-4716-920f-101b184bc407
+    DialogueText: Dialogue Node
+    Position: {x: 0, y: 0}
+  - NodeGUID: f0a145ce-d8ee-456d-a3f1-9b4a51d71987
+    DialogueText: Dialogue Node
+    Position: {x: 0, y: 0}
+  - NodeGUID: a8678c48-9efa-41ab-a5b8-4b9513261cf7
+    DialogueText: Dialogue Node
+    Position: {x: 0, y: 0}
+  - NodeGUID: 0b7870ff-9fcf-49d8-8ce2-7bf15476ae2c
+    DialogueText: Dialogue Node
+    Position: {x: 0, y: 0}
+  - NodeGUID: c668bfff-6071-47c8-a239-10fbc0ad974d
+    DialogueText: Dialogue Node
+    Position: {x: 0, y: 0}
+  - NodeGUID: 2d765f30-d4ae-4c08-a2f2-727fe4b617ee
+    DialogueText: Dialogue Node
+    Position: {x: 0, y: 0}
+  - NodeGUID: a27cf58e-538d-43dc-a2e5-7cae91db1907
+    DialogueText: 
+    Position: {x: 0, y: 0}
+  - NodeGUID: f73d33ff-9290-4a67-bee1-f8b34f491618
+    DialogueText: I pity a loser like you.
+    Position: {x: 334, y: 410}
+  - NodeGUID: 1dc08804-304d-4949-9fde-4829cf331035
+    DialogueText: Souless, maidenless, and childless.
+    Position: {x: 300, y: 155}
+  - NodeGUID: 602b63c2-227f-4576-bc25-9d85f6e3305a
+    DialogueText: 'But I''m not a fan of charity. '
+    Position: {x: 334, y: 627}
+  - NodeGUID: 1947a1a2-baca-4377-bb1c-b958229437e5
+    DialogueText: 'If you want to see the boss you''ll have to earn it. '
+    Position: {x: 334, y: 838}
+  - NodeGUID: a00339d7-4286-409e-81cd-43d404e52db8
+    DialogueText: 'Have this dice. '
+    Position: {x: 334, y: 1050}
+  - NodeGUID: 75cebfcd-ef53-446c-bb19-f2fe57c37c36
+    DialogueText: 'If you''re lucky you''ll roll a good buff for your weapon or even
+      debuff me. '
+    Position: {x: 334, y: 1240}
+  - NodeGUID: 64afa96f-1316-4bff-8891-3c2ef1d5a7c0
+    DialogueText: 
+    Position: {x: 1122, y: 651}
+  - NodeGUID: d06be6a5-3dcf-4f9b-86c9-ff5440bc4ffb
+    DialogueText: 'But if it''s not your day you can find yourself in a real pickle.
+      Hehe... '
+    Position: {x: 334, y: 1487}
+  ExposedProperties:
+  - PropertyName: New String
+    PropertyValue: New Value
+  - PropertyName: New String(1)
+    PropertyValue: New Value
+  CommentBlockData: []

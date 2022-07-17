@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Ui;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,17 +12,36 @@ namespace MainGame.DialogueGraph {
         [SerializeField] private DialogueContainer dialogue;
         [SerializeField] private TextMeshProUGUI dialogueText;
         [SerializeField] private Button choicePrefab;
+
         [SerializeField] private Transform buttonContainer;
+
         //[SerializeField] private AudioClip sound;
         [SerializeField] private InputProvider inputReader;
+        [SerializeField] private PanelOpener panelOpener;
+        [SerializeField] private Talking speaker;
+
+        public DialogueContainer Dialogue {
+            set => dialogue = value;
+        }
+        
+        public Talking Speaker {
+            set => speaker = value;
+        }
 
         private readonly List<Button> buttonList = new List<Button>();
         private bool isTyping;
 
         private void Start() {
+            inputReader = GameObject.FindGameObjectWithTag("Player")
+                .GetComponent<PlayerController>().InputProvider;
             inputReader.DisableInput();
+            TogglePanel();
             var narrativeData = dialogue.NodeLinks.First(); //Entrypoint node
             ProceedToNarrative(narrativeData.TargetNodeGUID);
+        }
+
+        public void TogglePanel() {
+           panelOpener.OpenPanel(); 
         }
 
         private void ProceedToNarrative(string guid) {
@@ -37,10 +57,14 @@ namespace MainGame.DialogueGraph {
                 var button = Instantiate(choicePrefab, buttonContainer);
                 button.GetComponentInChildren<Text>().text = choice.PortName;
                 button.onClick.AddListener(() => ProceedToNarrative(choice.TargetNodeGUID));
+                button.onClick.AddListener(() => Debug.Log("click"));
                 // button.onClick.AddListener(() => SoundManager.Instance.PlayButtonClickSound());
                 buttonList.Add(button);
             }
 
+            if (speaker != null) {
+                speaker.ToggleTalk(true);
+            }
             StartCoroutine(PlayDialogue(text));
         }
 
@@ -57,6 +81,8 @@ namespace MainGame.DialogueGraph {
 
             ToggleButton(true);
 
+            speaker.ToggleTalk(false);
+            
             if (buttonList.Count < 1) {
                 inputReader.EnableInput();
                 gameObject.SetActive(false);

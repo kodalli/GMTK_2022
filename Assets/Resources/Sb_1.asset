@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3b045ba31c4b189ec3fe8db4471315, type: 3}
+  m_Name: Sb_1
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGUID: c13a3d2b-f565-4c35-99d1-d079a622fa8d
+    PortName: Next
+    TargetNodeGUID: 0592f3d1-ebca-440a-9841-76a78cb5b4cf
+  - BaseNodeGUID: 0592f3d1-ebca-440a-9841-76a78cb5b4cf
+    PortName: next
+    TargetNodeGUID: f1e28df2-c00e-4656-9726-ebe91e4cd5e1
+  - BaseNodeGUID: 0592f3d1-ebca-440a-9841-76a78cb5b4cf
+    PortName: skip
+    TargetNodeGUID: 47df2dc2-f293-4543-9446-94361d27529e
+  - BaseNodeGUID: f1e28df2-c00e-4656-9726-ebe91e4cd5e1
+    PortName: next
+    TargetNodeGUID: 47df2dc2-f293-4543-9446-94361d27529e
+  DialogueNodeData:
+  - NodeGUID: 0592f3d1-ebca-440a-9841-76a78cb5b4cf
+    DialogueText: 'That tuxedo guy was pretty weak huh. '
+    Position: {x: 215, y: 316}
+  - NodeGUID: f1e28df2-c00e-4656-9726-ebe91e4cd5e1
+    DialogueText: 'Your cards won''t be enough to beat me! '
+    Position: {x: 215, y: 519}
+  - NodeGUID: 47df2dc2-f293-4543-9446-94361d27529e
+    DialogueText: 
+    Position: {x: 702, y: 438}
+  ExposedProperties: []
+  CommentBlockData: []
