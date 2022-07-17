@@ -20,6 +20,7 @@ namespace MainGame.DialogueGraph {
         [SerializeField] private InputProvider inputReader;
         [SerializeField] private PanelOpener panelOpener;
         [SerializeField] private Talking speaker;
+        [SerializeField] private Scene1 introManager;
 
         public DialogueContainer Dialogue {
             set => dialogue = value;
@@ -95,10 +96,16 @@ namespace MainGame.DialogueGraph {
             if (buttonList.Count < 1) {
                 inputReader.EnableInput();
                 panelOpener.ClosePanel();
-                gameObject.SetActive(false);
+                if (introManager != null) {
+                    // Intro
+                    introManager.FamilyInToScene();
+                }
+                else {
+                    gameObject.SetActive(false);
+                }
             }
         }
-
+        
         private void ToggleButton(bool state) {
             if (buttonList.Count > 0)
                 buttonList[0].enabled = state;

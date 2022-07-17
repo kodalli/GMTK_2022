@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Battle.unity
     guid: cc39de6f171c0de4da5ca8d883380dc0
+  - enabled: 1
+    path: Assets/Scenes/Casino_Slimy.unity
+    guid: 8f3400e65b463e34c9948861ef595890
+  - enabled: 1
+    path: Assets/Scenes/Casino_Final.unity
+    guid: 959cad20b5618a4449026118ebf454bc
   m_configObjects: {}
