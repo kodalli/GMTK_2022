@@ -2,7 +2,7 @@
 using UnityEngine;
 
 namespace InteractionSystem.TalkToNpc {
-    public class InteractTuxedo : MonoBehaviour {
+    public class InteractTuxedo : Interactable {
         public Scene2 casino1;
         public PlayerController playerController;
         public bool interact;

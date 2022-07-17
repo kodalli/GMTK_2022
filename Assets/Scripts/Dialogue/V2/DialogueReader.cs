@@ -16,7 +16,7 @@ namespace MainGame.DialogueGraph {
         [SerializeField] private Transform buttonContainer;
         public GameObject panelContainer;
 
-        //[SerializeField] private AudioClip sound;
+        [SerializeField] private AudioClip sound;
         [SerializeField] private InputProvider inputReader;
         [SerializeField] private PanelOpener panelOpener;
         [SerializeField] private Talking speaker;
@@ -66,7 +66,7 @@ namespace MainGame.DialogueGraph {
                 button.GetComponentInChildren<Text>().text = choice.PortName;
                 button.onClick.AddListener(() => ProceedToNarrative(choice.TargetNodeGUID));
                 button.onClick.AddListener(() => Debug.Log("click"));
-                // button.onClick.AddListener(() => SoundManager.Instance.PlayButtonClickSound());
+                button.onClick.AddListener(() => SoundManager.Instance.PlayButtonClickSound());
                 buttonList.Add(button);
             }
 
@@ -84,7 +84,9 @@ namespace MainGame.DialogueGraph {
             while (count <= text.Length) {
                 yield return new WaitForSeconds(0.04f);
                 dialogueText.text = text.Substring(0, count);
-                // SoundManager.Instance.PlaySound(sound);
+                if (sound != null) {
+                    SoundManager.Instance.PlaySound(sound);
+                }
                 count++;
             }
 
