@@ -14,13 +14,14 @@ namespace MainGame.DialogueGraph {
         [SerializeField] private Button choicePrefab;
 
         [SerializeField] private Transform buttonContainer;
-        [SerializeField] private GameObject panelContainer;
+        public GameObject panelContainer;
 
         //[SerializeField] private AudioClip sound;
         [SerializeField] private InputProvider inputReader;
         [SerializeField] private PanelOpener panelOpener;
         [SerializeField] private Talking speaker;
         [SerializeField] private Scene1 introManager;
+        [SerializeField] private Scene2 scene2;
 
         public DialogueContainer Dialogue {
             set => dialogue = value;
@@ -29,7 +30,7 @@ namespace MainGame.DialogueGraph {
         public Talking Speaker {
             set => speaker = value;
         }
-        
+
         private readonly List<Button> buttonList = new List<Button>();
         private bool isTyping;
 
@@ -38,17 +39,17 @@ namespace MainGame.DialogueGraph {
                 panelContainer.SetActive(false);
             }
             else {
-                Init(); 
+                Init();
             }
         }
-        
+
         public void Init() {
             inputReader = GameObject.FindGameObjectWithTag("Player")
-                            .GetComponent<PlayerController>().InputProvider;
-                        inputReader.DisableInput();
-                        panelOpener.OpenPanel();
-                        var narrativeData = dialogue.NodeLinks.First(); //Entrypoint node
-                        ProceedToNarrative(narrativeData.TargetNodeGUID);
+                .GetComponent<PlayerController>().InputProvider;
+            inputReader.DisableInput();
+            panelOpener.OpenPanel();
+            var narrativeData = dialogue.NodeLinks.First(); //Entrypoint node
+            ProceedToNarrative(narrativeData.TargetNodeGUID);
         }
 
         private void ProceedToNarrative(string guid) {
@@ -99,13 +100,15 @@ namespace MainGame.DialogueGraph {
                 if (introManager != null) {
                     // Intro
                     introManager.FamilyInToScene();
+                } else if (scene2 != null) {
+                    scene2.GoNext();
                 }
                 else {
                     gameObject.SetActive(false);
                 }
             }
         }
-        
+
         private void ToggleButton(bool state) {
             if (buttonList.Count > 0)
                 buttonList[0].enabled = state;

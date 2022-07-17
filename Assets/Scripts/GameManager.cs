@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour {
     public int rolls = 0;
     public int diceCount = 1;
     public List<Card.Card> activeStatuses = new List<Card.Card>();
+    public bool reachedFirstDialogueTuxedo = false;
+    public bool justDied = false;
 
     public static GameManager Instance { get; private set; }
 

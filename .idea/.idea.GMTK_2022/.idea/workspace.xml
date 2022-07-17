@@ -2,12 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c774085-9ee6-4d08-aeb6-54a58b5e137b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/TalkToNpc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/TalkToNpc/InteractBoss.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/TalkToNpc/InteractBoss.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/TalkToNpc/InteractSlimy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/TalkToNpc/InteractSlimy.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/TalkToNpc/InteractTuxedo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/TalkToNpc/InteractTuxedo.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GMTK_2022/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GMTK_2022/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Black Panel.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/Black Panel.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/enemy1 talking.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/enemy1 talking.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Tb_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Tb_1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Tb_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Tb_2.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Casino_Tuxedo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Casino_Tuxedo.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/V2/DialogueReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/V2/DialogueReader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ui/Scene1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ui/Scene1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ui/Scene2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ui/Scene2.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,11 +37,13 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/f1/f4b801f8/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dialogue/V2/DialogueReader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/CollisionDetection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../IndieTalesGameJam/IndieTalesGameJam2021/Assets/Scripts/Dialogue/Runtime/DialogueContainer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../IndieTalesGameJam/IndieTalesGameJam2021/Assets/Scripts/Dialogue/Runtime/DialogueNodeData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/4c/04e5cb52/UnityAction.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../IndieTalesGameJam/IndieTalesGameJam2021/Assets/Scripts/Dialogue/Runtime/CommentBlockData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3be1a7ff939c43f181c0a10b5a0189ac13c800/63/40f4dada/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../IndieTalesGameJam/IndieTalesGameJam2021/Assets/Scripts/DialogueReader.cs" root0="SKIP_HIGHLIGHTING" />
