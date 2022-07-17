@@ -6,23 +6,22 @@ public class CircleMoveTogether : MonoBehaviour
 {
     public GameObject TrianglesPrefab;
 
-    [SerializeField]
-    private Vector2 TriangleMoveDir = new Vector2(4f,1f);
-
-    [SerializeField]    
-    private float projectileSpeed = 4f;
-
     private GameObject player;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        InvokeRepeating("TriangleSummon",0f,1f);
+        InvokeRepeating("TriangleSummon",0f,2f);
     }
     private void TriangleSummon()
     {
-
-        GameObject bullet = Instantiate(TrianglesPrefab, transform);
+        Vector3 face = (player.transform.position - transform.position).normalized;
+        //GameObject bullet =
+        Vector3 right = new Vector3(transform.position.x+.5f, transform.position.y-.4f,transform.position.z);
+        Instantiate(TrianglesPrefab, right,Quaternion.Euler(0f,0f,-90f));
+        
       //  bullet.transform.position 
-        bullet.GetComponent<Rigidbody2D>().AddForce(TriangleMoveDir * projectileSpeed, ForceMode2D.Impulse);
+        //bullet.GetComponent<Rigidbody2D>().AddForce(TriangleMoveDir * projectileSpeed, ForceMode2D.Impulse);
     }
+
+
 }
