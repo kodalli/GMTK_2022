@@ -6,10 +6,10 @@ namespace Ui {
         
         private static readonly int IsTalking = Animator.StringToHash("isTalking");
 
-        public void ToggleTalk() {
+        public void ToggleTalk(bool state) {
             var animator = GetComponent<Animator>();
-            var isOpen = animator.GetBool(IsTalking);
-            animator.SetBool(IsTalking, !isOpen);
+            // var isOpen = animator.GetBool(IsTalking);
+            animator.SetBool(IsTalking, state);
         }
     }
 }

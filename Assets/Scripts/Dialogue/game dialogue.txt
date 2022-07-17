@@ -1,0 +1,40 @@
+Final Boss (1):
+Timmy...
+Your gambling debt has gotten out of control.
+You even sold your soul to me. And now you have nothing left to offer.
+Well...
+Except for your family. Hehe...
+
+
+Tuxedo Boss(1):
+Souless, maidenless, and childless. 
+I pity a loser like you. 
+But I'm not a fan of charity.
+If you want to see the boss you'll have to earn it.
+Have this dice.
+If you're lucky you'll roll a good buff for your weapon or even debuff me.
+But if it's not your day you can find yourself in a real pickle. Hehe...
+
+Tuxedo Boss(2) Retry:
+Pathetic...
+Your death made me laugh so here's another die.
+Be careful not to roll the dice too much though. Hehe...
+
+Tuxedo Boss(3) Death:
+Impossible!
+A mere human defeated me! A gambling addict in debt!
+Noooooooo!
+
+Slimy Boss(1):
+That tuxedo guy was pretty weak huh.
+Your cards won't be enough to beat me!
+
+Slimy Boss(2) Retry:
+Heh. Not so tough are ya.
+Have another die. I love seeing you get bad rolls.
+
+Slimy Boss(3) Death:
+Ow my eye. Not cool dude.
+
+
+

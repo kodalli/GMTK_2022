@@ -12,5 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a636c2c86d23402caeb80c09966a882f, type: 3}
   m_Name: Enemy3
   m_EditorClassIdentifier: 
-  voiceLines: []
-  index: 0
+  voiceLines:
+  - Timmy...
+  - Your gambling debt has gotten out of control.
+  - 'You even sold your soul to me. And now you have nothing left to offer.
+
+'
+  - 'Well...
+
+'
+  - Except for your family. Hehe...
+  checkpoints: []
+  index: 2

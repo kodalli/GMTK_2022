@@ -19,7 +19,10 @@ namespace Dialogue {
 
         public string GoNextLine() {
             index++;
-            return index >= voiceLines.Count ? "Out of bounds" : voiceLines[index];
+            if (index >= voiceLines.Count) {
+                index = 0;
+            }
+            return voiceLines[index];
         }
 
         public string GoToLine(int i) {
