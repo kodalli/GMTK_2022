@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
     private const int CasinoIndex3 = 5;
     private const int IntroIndex = 1;
     private const int MenuIndex = 0;
-    private const int Battle1Index = 6;
+    private const int Battle1Index = 3;
     private const int Battle2Index = 3;
     private const int Battle3Index = 3;
 

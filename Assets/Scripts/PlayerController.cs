@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Aarthificial.Reanimation;
 using Unity.Mathematics;
 using UnityEngine;
@@ -12,13 +13,13 @@ public enum PlayerState {
     Hit = 2,
 }
 
-public interface IPlayer
-{
+public interface IPlayer {
     void TakeDamage();
 }
-public class PlayerController : MonoBehaviour,IPlayer {
-    [SerializeField]
-    public int PlayerHealth = 200;
+
+public class PlayerController : MonoBehaviour, IPlayer {
+    [SerializeField] public int PlayerHealth = 200;
+
     private static class Drivers {
         public const string IsMoving = "isMoving";
         public const string IsMovingHorizontal = "isMovingHorizontal";
@@ -29,13 +30,50 @@ public class PlayerController : MonoBehaviour,IPlayer {
         public const string MovingLeft = "movingLeft";
     }
 
-    public void TakeDamage()
-    {
+    private int durability = 0;
+    private int fireRate = 0;
+    private int damageBoost = 0;
+
+    private void Start() {
+        var effects = GameManager.Instance.activeStatuses;
+        foreach (var card in effects.Where(card => card.appliedTo.Equals("Timmy"))) {
+            switch (card.statusName) {
+                case "Heavy Fire":
+                    damageBoost += card.effectStrength;
+                    break;
+                case "Quickshot":
+                    fireRate += card.effectStrength;
+                    break;
+                case "Hardened":
+                    durability += card.effectStrength;
+                    break;
+                case "Brittle":
+                    durability += -card.effectStrength;
+                    break;
+                case "Jammed":
+                    fireRate += -card.effectStrength;
+                    break;
+                case "Weak":
+                    damageBoost += -card.effectStrength;
+                    break;
+            }
+        }
+    }
+
+    private static int GetFactor(float baseD, float field) {
+        if (field < 0) {
+            var f = 1 + (-field/5f);
+            return Mathf.CeilToInt(10 * f);
+        } else {
+            return Mathf.CeilToInt(10 - field/5);
+        }
+    }
+
+    public void TakeDamage() {
         Debug.Log(PlayerHealth);
-        if (PlayerHealth > 0)
-        {
+        if (PlayerHealth > 0) {
             Flash();
-            PlayerHealth -= 10;
+            PlayerHealth -= GetFactor(10, durability);
         }
         else {
             GameManager.Instance.justDied = true;

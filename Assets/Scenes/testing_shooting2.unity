@@ -145,6 +145,8 @@ MonoBehaviour:
   startAngle: 160
   endAngle: 360
   angle: 0
+  speed: 4
+  frequency: 1
 --- !u!1 &263184206
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,6 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   homingProj1: {fileID: 2665171675989260175, guid: 87fc6d5ca565f6e49a321a0d02db25a1, type: 3}
+  pewSound: {fileID: 8300000, guid: bc51307fc66b3bd4eb155905fd62cc02, type: 3}
   timerEnd: 4
   projs: 5
 --- !u!114 &877511764
@@ -393,6 +396,8 @@ MonoBehaviour:
   startAngle: 0
   endAngle: 360
   angle: 0
+  speed: 4
+  frequency: 1
 --- !u!1 &932779577
 GameObject:
   m_ObjectHideFlags: 3
@@ -805,7 +810,7 @@ Transform:
   m_Children:
   - {fileID: 932779578}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1938800571
 PrefabInstance:
@@ -814,6 +819,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 877511763, guid: 1914d1a87fc21b4438f63cde9a2471e8, type: 3}
+      propertyPath: pewSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bc51307fc66b3bd4eb155905fd62cc02, type: 3}
     - target: {fileID: 877511764, guid: 1914d1a87fc21b4438f63cde9a2471e8, type: 3}
       propertyPath: waypoints.Array.size
       value: 4

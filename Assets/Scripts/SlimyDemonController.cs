@@ -15,8 +15,8 @@ public class SlimyDemonController : MonoBehaviour, IEnemy {
 
     private int waypointIndex;
     private bool inRoutine;
-    void Start()
-    {
+    void Start() {
+        health = 1000;
         transform.position = waypoints[0].transform.position;
     }
     void Update() {
@@ -27,10 +27,11 @@ public class SlimyDemonController : MonoBehaviour, IEnemy {
     }
 
     public void TakeDamage() {
-        health -= 10;
+        health -= 5;
         
         if (health == 0) {
-            Destroy(this.gameObject);
+            GameManager.Instance.LoadMainMenu();
+            // Destroy(this.gameObject);
         }
     }
     IEnumerator MoveEnemy() {
