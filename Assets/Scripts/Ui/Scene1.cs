@@ -14,21 +14,25 @@ namespace Ui {
 
         private void Start() {
             Toggle(false);
-            Invoke(nameof(Activate), 1.2f);
+            // Invoke(nameof(Activate), 1.2f);
         }
 
         private void Toggle(bool state) {
             player.SetActive(state);
             boss.SetActive(state);
+            if (buttonHolder == null) return;
             buttonHolder.SetActive(state);
         }
 
-        private void Activate() {
+        public void Activate() {
+            // Start the dialogue
             Toggle(true);
             reader.Speaker = boss.GetComponent<Talking>();
+            reader.StartDialogue();
         }
 
         public void FamilyInToScene() {
+            Destroy(buttonHolder);
             family.OpenPanel();
             StartCoroutine(TransitionScene());
         }
@@ -37,7 +41,7 @@ namespace Ui {
             yield return new WaitForSeconds(2f);
             blackScreen.OpenPanel();
             yield return new WaitForSeconds(2.5f);
-            GameManager.Instance.LoadCasinoScene1();    
+            GameManager.LoadCasinoScene1();    
         }
     }
 }

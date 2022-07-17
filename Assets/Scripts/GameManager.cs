@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Card;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,7 +10,7 @@ public class GameManager : MonoBehaviour {
     private const int CasinoIndex3 = 5;
     private const int IntroIndex = 1;
     private const int MenuIndex = 0;
-    private const int Battle1Index = 6;
+    private const int Battle1Index = 3;
     private const int Battle2Index = 3;
     private const int Battle3Index = 3;
 
@@ -18,6 +19,9 @@ public class GameManager : MonoBehaviour {
     public List<Card.Card> activeStatuses = new List<Card.Card>();
     public bool reachedFirstDialogueTuxedo = false;
     public bool justDied = false;
+
+    public EffectFields playerEffects;
+    public EffectFields enemyEffects;
 
     private GameObject menuCanvas;
     private GameObject startButton;
@@ -36,18 +40,28 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Start() {
+        SoundManager.Instance.PlaySlotDemon();
         // LoadMainMenu();
         menuCanvas = GameObject.Find("MenuCanvas");
 
         if (menuCanvas == null) return;
         startButton = menuCanvas.FindInChildren("StartButton");
         exitButton = menuCanvas.FindInChildren("ExitButton");
-            
+
         startButton.GetComponent<Button>().onClick.AddListener(LoadIntroScene);
         exitButton.GetComponent<Button>().onClick.AddListener(Application.Quit);
     }
 
-    public void LoadCasinoScene1() {
+    public void SetPlayerEffects(int damageBoost, int fireRate, int durability) {
+        playerEffects = new EffectFields(damageBoost, fireRate, durability);
+    }
+
+    public void SetEnemyEffects(int damageBoost, int fireRate, int durability) {
+        enemyEffects = new EffectFields(damageBoost, fireRate, durability);
+    }
+
+    public static void LoadCasinoScene1() {
+        SoundManager.Instance.PlaySlotDemon();
         SceneManager.LoadScene(CasinoIndex1);
     }
 
@@ -59,15 +73,18 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene(CasinoIndex3);
     }
 
-    public void LoadIntroScene() {
+    public static void LoadIntroScene() {
+        SoundManager.Instance.PlaySlotDemon();
         SceneManager.LoadScene(IntroIndex);
     }
 
-    public void LoadMainMenu() {
+    public static void LoadMainMenu() {
+        SoundManager.Instance.PlaySlotDemon();
         SceneManager.LoadScene(MenuIndex);
     }
 
-    public void LoadBattleScene1() {
+    public static void LoadBattleScene1() {
+        SoundManager.Instance.PlayBossMusic();
         SceneManager.LoadScene(Battle1Index);
     }
 

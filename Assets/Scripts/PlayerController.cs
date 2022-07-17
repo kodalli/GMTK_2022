@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Aarthificial.Reanimation;
+using Card;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -12,13 +14,14 @@ public enum PlayerState {
     Hit = 2,
 }
 
-public interface IPlayer
-{
-    void TakeDamage();
+public interface IPlayer {
+    void TakeDamage(float damageValue);
 }
-public class PlayerController : MonoBehaviour,IPlayer {
-    [SerializeField]
-    public int PlayerHealth = 200;
+
+public class PlayerController : MonoBehaviour, IPlayer {
+    [FormerlySerializedAs("PlayerHealth")] [SerializeField]
+    public int playerHealth = 200;
+
     private static class Drivers {
         public const string IsMoving = "isMoving";
         public const string IsMovingHorizontal = "isMovingHorizontal";
@@ -29,19 +32,6 @@ public class PlayerController : MonoBehaviour,IPlayer {
         public const string MovingLeft = "movingLeft";
     }
 
-    public void TakeDamage()
-    {
-        Debug.Log(PlayerHealth);
-        if (PlayerHealth > 0)
-        {
-            Flash();
-            PlayerHealth -= 10;
-        }
-        else {
-            GameManager.Instance.justDied = true;
-            GameManager.Instance.LoadCasinoScene1();
-        }
-    }
 
     [SerializeField] private InputProvider inputProvider;
     [SerializeField] private InteractionLogic interactionLogic;
@@ -61,6 +51,7 @@ public class PlayerController : MonoBehaviour,IPlayer {
     private Reanimator reanimator;
     private CollisionDetection collisionDetection;
     private GameObject gun;
+    private SpriteRenderer spriteRenderer;
     public Transform firePoint;
     public GameObject bulletPrefab;
 
@@ -72,15 +63,29 @@ public class PlayerController : MonoBehaviour,IPlayer {
     // private bool movingRight;
     // private bool movingLeft;
 
+    private int durability = 1;
+    private int fireRate = 100;
+    private int damageBoost = 5;
+    private bool fire = false;
+
+    [SerializeField] private float fireCountDown = 0;
+
     private void Awake() {
         inputProvider.EnableInput();
 
         reanimator = GetComponent<Reanimator>();
         collisionDetection = GetComponent<CollisionDetection>();
         collider = GetComponent<BoxCollider2D>();
-
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        
         gun = transform.Find("Gun").gameObject;
+
     }
+
+    private void Start() {
+        ApplyEffects();
+    }
+
 
     private void OnDrawGizmos() {
         Gizmos.color = Color.blue;
@@ -89,7 +94,8 @@ public class PlayerController : MonoBehaviour,IPlayer {
 
     private void OnEnable() {
         inputProvider.MousePosEvent += OnMouse;
-        inputProvider.ShootEvent += Shoot;
+        inputProvider.ShootEventStart += ToggleFireOn;
+        inputProvider.ShootEventEnd += ToggleFireOff;
         // reanimator.AddListener(Drivers.MovingLeft, () => {
         // movingLeft = true;
         // movingRight = false;
@@ -102,7 +108,8 @@ public class PlayerController : MonoBehaviour,IPlayer {
 
     private void OnDisable() {
         inputProvider.MousePosEvent -= OnMouse;
-        inputProvider.ShootEvent -= Shoot;
+        inputProvider.ShootEventStart -= ToggleFireOn;
+        inputProvider.ShootEventEnd -= ToggleFireOff;
 
         // reanimator.RemoveListener(Drivers.MovingLeft, () => {
         // movingLeft = true;
@@ -115,6 +122,7 @@ public class PlayerController : MonoBehaviour,IPlayer {
     }
 
     private void Update() {
+        UpdateFireGun();
         UpdateMovementState();
         UpdateGunDirection();
         UpdateGunDirection();
@@ -125,34 +133,74 @@ public class PlayerController : MonoBehaviour,IPlayer {
         reanimator.Set(Drivers.IsMovingRight, MovementDirection.x > 0);
         reanimator.Set(Drivers.IsMovingUp, MovementDirection.y > 0);
     }
-#if UNITY_EDITOR
-    void OnGUI() {
-        if (GUILayout.Button("Flash")) {
-            Flash();
+
+    #region Status Effects
+
+    private void ApplyEffects() {
+        StatusEffects.ApplyPlayer(ref damageBoost, ref fireRate, ref durability);
+        GameManager.Instance.SetPlayerEffects(damageBoost, fireRate, durability);
+        Debug.Log(
+            $"Player: damage: {damageBoost}, fire rate: {fireRate}, durability: {durability}");
+    }
+
+
+    #endregion
+
+    #region Take Damage
+
+    public void TakeDamage(float damageValue) {
+        Debug.Log(playerHealth);
+        if (playerHealth > 0) {
+            DamageAnimation();
+            playerHealth -= StatusEffects.GetFactor(damageValue, durability);
+        }
+        else {
+            GameManager.Instance.justDied = true;
+            GameManager.LoadCasinoScene1();
         }
     }
-#endif
-    public void Flash() {
+
+    private void DamageAnimation() {
         StartCoroutine(FlashDamage());
     }
 
     private IEnumerator FlashDamage() {
-        var spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.material = takeDamageMat;
         yield return new WaitForSeconds(0.2f);
         spriteRenderer.material = spritesDefault;
     }
 
+    #endregion
+
+    #region Shooting
+
+    private void UpdateFireGun() {
+        if (fire && fireCountDown < 0) {
+            fireCountDown = 10f / fireRate;
+            Shoot();
+        }
+
+        if (fireCountDown > -0.1f) {
+            fireCountDown -= Time.deltaTime;
+        }
+    }
+
+    private void ToggleFireOn() => fire = true;
+
+    private void ToggleFireOff() => fire = false;
 
     private void Shoot() {
         if (gun == null || !gun.activeSelf) {
             return;
         }
 
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        var rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
     }
+
+    #endregion
+
 
     private void OnMouse(Vector2 value) =>
         gunDirectionInput = Camera.main.ScreenToWorldPoint(value) - transform.position;

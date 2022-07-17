@@ -11,7 +11,7 @@ namespace Dice {
     public class DiceRoll : MonoBehaviour {
         public List<Card.Card> buffs = new List<Card.Card>();
         public List<Card.Card> debuffs = new List<Card.Card>();
-        public CardRenderer renderer;
+        public new CardRenderer renderer;
         public TextMeshProUGUI diceText;
 
         private void Start() {

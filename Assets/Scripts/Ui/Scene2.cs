@@ -4,17 +4,19 @@ using System.Collections.Generic;
 using MainGame.DialogueGraph;
 using Ui;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Scene2 : MonoBehaviour {
     // Start is called before the first frame update
     public DialogueReader reader;
     public PanelOpener blackPanel;
     public GameObject canvas;
+    public GameObject characterPanel;
     private bool reachedFirstDialogue;
     public GameObject dice;
     private bool justDied;
     public DialogueContainer secondaryDialogue;
-    private bool reachedSecondDialogue;
+    [SerializeField]private int talked = 0;
 
     private void Start() {
         reachedFirstDialogue = GameManager.Instance.reachedFirstDialogueTuxedo;
@@ -23,7 +25,6 @@ public class Scene2 : MonoBehaviour {
         if (justDied) {
             GameManager.Instance.diceCount++;
         }
-        reachedSecondDialogue = false;
         GameManager.Instance.rolls = 0;
     }
 
@@ -34,36 +35,36 @@ public class Scene2 : MonoBehaviour {
 
     private IEnumerator NextScene() {
         yield return new WaitForSeconds(2f);
-        GameManager.Instance.LoadBattleScene1();
+        GameManager.LoadBattleScene1();
+    }
+
+    public void Activate() {
+        characterPanel.SetActive(true);
+        reader.StartDialogue();
     }
     
     public void StartDialogue() {
-        if (reachedSecondDialogue && GameManager.Instance.rolls > 1) {
+        talked++;
+        if (talked > 1) {
             ChangeToBattle();
             return;
         }
         if (justDied) {
            //  set the new dialogue; 
            reader.Dialogue = secondaryDialogue;
-           reachedSecondDialogue = true;
         } else if (reachedFirstDialogue) {
             ChangeToBattle(); 
             return;
         }
         canvas.SetActive(true);
         reader.panelContainer.SetActive(true);
+        characterPanel.SetActive(false);
         reader.Init();
     }
 
-    public void GoNext() {
-        if (reachedFirstDialogue && !justDied) {
-            ChangeToBattle();
-        }
-        else {
-            canvas.SetActive(false);
-            dice.SetActive(true);
-        }
-
+    public void AfterDialogue() {
+        canvas.SetActive(false);
+        dice.SetActive(true);
         reachedFirstDialogue = true;
         GameManager.Instance.reachedFirstDialogueTuxedo = true;
     }
