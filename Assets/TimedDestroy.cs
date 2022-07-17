@@ -9,7 +9,9 @@ public class TimedDestroy : MonoBehaviour
 
     void Start()
     {
-        Destroy(this.gameObject,time);    
+        Destroy(this.gameObject,time); 
+
+
     }
 
 }

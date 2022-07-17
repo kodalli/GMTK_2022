@@ -33,9 +33,8 @@ public class BulletController : MonoBehaviour
             if (player != null)
             {
                 player.TakeDamage();
-                gameObject.SetActive(false);
+                Destroy();
             }
-
         }
     }
 }
