@@ -1,26 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class moveForward : MonoBehaviour
-{
-    [SerializeField]
-    private float speed = 4f;
-    [SerializeField]
-    private Vector2 Dir = new Vector2(-1f, 0f);
-
-    private GameObject player;
-    // Start is called before the first frame update
-    void Start()
+namespace BulletScripts {
+    public class moveForward : MonoBehaviour
     {
-        
-        this.GetComponent<Rigidbody2D>().AddForce(Dir*speed,ForceMode2D.Impulse);
+        [SerializeField]
+        private float speed = 4f;
+        [FormerlySerializedAs("Dir")] [SerializeField]
+        private Vector2 direction = new Vector2(-1f, 0f);
+
+        // Start is called before the first frame update
+        private void Start()
+        {
+            GetComponent<Rigidbody2D>().AddForce(direction*speed,ForceMode2D.Impulse);
+        }
 
     }
-
-
-
-
 }
 
 

@@ -96,6 +96,7 @@ namespace MainGame.DialogueGraph {
                 speaker.ToggleTalk(false);
             }
 
+            // Close dialogue if nothing left to say
             if (buttonList.Count < 1) {
                 inputReader.EnableInput();
                 panelOpener.ClosePanel();
@@ -103,7 +104,7 @@ namespace MainGame.DialogueGraph {
                     // Intro
                     introManager.FamilyInToScene();
                 } else if (scene2 != null) {
-                    scene2.GoNext();
+                    scene2.AfterDialogue();
                 }
                 else {
                     gameObject.SetActive(false);

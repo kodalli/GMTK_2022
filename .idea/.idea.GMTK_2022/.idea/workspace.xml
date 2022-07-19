@@ -5,12 +5,17 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GMTK_2022/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GMTK_2022/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Casino_Tuxedo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Casino_Tuxedo.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/testing_shooting2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/testing_shooting2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BulletScripts/CircleMoveTogether.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BulletScripts/CircleMoveTogether.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BulletScripts/Turret.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BulletScripts/Turret.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BulletScripts/moveForward.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BulletScripts/moveForward.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BulletScripts/rotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BulletScripts/rotate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BulletScripts/straightPattern.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BulletScripts/straightPattern.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/V2/DialogueReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/V2/DialogueReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dice/DiceRoll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dice/DiceRoll.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/InteractionLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/InteractionLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/TalkToNpc/InteractTuxedo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractionSystem/TalkToNpc/InteractTuxedo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SlimyDemonController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SlimyDemonController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ui/Scene2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ui/Scene2.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +123,7 @@
       <workItem from="1657915766988" duration="1526000" />
       <workItem from="1657917459417" duration="2792000" />
       <workItem from="1657981486894" duration="3496000" />
+      <workItem from="1658192611730" duration="4701000" />
     </task>
     <servers />
   </component>

@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a846ebcc3c3e1424682703bc19770908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 8731100576187945935, guid: 542158b8617ceec4f94086ba78aab3d0, type: 3}
   bulletsAmount: 5
   startAngle: 160
   endAngle: 360
@@ -359,7 +359,7 @@ MonoBehaviour:
   homingProj1: {fileID: 2665171675989260175, guid: 87fc6d5ca565f6e49a321a0d02db25a1, type: 3}
   pewSound: {fileID: 8300000, guid: bc51307fc66b3bd4eb155905fd62cc02, type: 3}
   timerEnd: 4
-  projs: 5
+  projectiles: 5
 --- !u!114 &877511764
 MonoBehaviour:
   m_ObjectHideFlags: 0
