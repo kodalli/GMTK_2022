@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Aarthificial.Reanimation;
+using Card;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -35,33 +36,11 @@ public class PlayerController : MonoBehaviour, IPlayer {
     private int damageBoost = 0;
 
     private void Start() {
-        ApplyStatusEffects();
+        ApplyEffects();
     }
 
-    private void ApplyStatusEffects() {
-        var effects = GameManager.Instance.activeStatuses;
-        foreach (var card in effects.Where(card => card.appliedTo.Equals("Timmy"))) {
-            switch (card.statusName) {
-                case "Heavy Fire":
-                    damageBoost += card.effectStrength;
-                    break;
-                case "Quickshot":
-                    fireRate += card.effectStrength;
-                    break;
-                case "Hardened":
-                    durability += card.effectStrength;
-                    break;
-                case "Brittle":
-                    durability += -card.effectStrength;
-                    break;
-                case "Jammed":
-                    fireRate += -card.effectStrength;
-                    break;
-                case "Weak":
-                    damageBoost += -card.effectStrength;
-                    break;
-            }
-        }
+    private void ApplyEffects() {
+        ApplyStatusEffects.ApplyPlayer(ref damageBoost, ref fireRate, ref durability); 
     }
 
     private static int GetFactor(float baseD, float field) {
