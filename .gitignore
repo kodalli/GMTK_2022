@@ -87,7 +87,7 @@ crashlytics-build.properties
 .vs/
 .vscode/
 
-./idea
+.idea/
 
 # Gradle cache directory
 .gradle/
