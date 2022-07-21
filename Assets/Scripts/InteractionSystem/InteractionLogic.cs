@@ -19,9 +19,7 @@ public class InteractionLogic : ScriptableObject {
     }
 
     private void CheckForInteractable(PlayerController player, Vector3 center) {
-        bool hitSomething;
-        
-        hitSomething = Helper.CircleCast(center, 2f, center, 0, interactionLayer,
+        var hitSomething = Helper.CircleCast(center, 2f, center, 0, interactionLayer,
             out var ray);
         if (hitSomething) {
             interactable = ray.transform.GetComponent<Interactable>();

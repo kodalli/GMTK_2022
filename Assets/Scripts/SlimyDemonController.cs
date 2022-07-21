@@ -9,14 +9,13 @@ public interface IEnemy {
 public class SlimyDemonController : MonoBehaviour, IEnemy {
     private SpriteRenderer SpriteRenderer;
     
-    [SerializeField] private float health = 1000;
+    [SerializeField] private float health = 100;
     [SerializeField] private float speed = 6f;
     [SerializeField] private List<Transform> waypoints;
 
     private int waypointIndex;
     private bool inRoutine;
-    void Start()
-    {
+    void Start() {
         health = 1000;
         transform.position = waypoints[0].transform.position;
     }
@@ -28,11 +27,11 @@ public class SlimyDemonController : MonoBehaviour, IEnemy {
     }
 
     public void TakeDamage() {
-        Debug.Log(health);
-        health -= 10;
+        health -= 5;
         
         if (health == 0) {
-            Destroy(this.gameObject);
+            GameManager.Instance.LoadMainMenu();
+            // Destroy(this.gameObject);
         }
     }
     IEnumerator MoveEnemy() {

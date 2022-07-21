@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1643728029}
     m_Modifications:
+    - target: {fileID: 5143948567200177885, guid: 337337c1fcf65134ca6bb4b0a8c0ec46, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5479416178920745578, guid: 337337c1fcf65134ca6bb4b0a8c0ec46, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -373,7 +377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5195162437412585483, guid: ac290ce98d09d6441bc78a82fb502a28, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5543645968882965210, guid: ac290ce98d09d6441bc78a82fb502a28, type: 3}
       propertyPath: m_RootOrder
@@ -690,7 +694,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -2414,7 +2418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5195162437412585483, guid: ac290ce98d09d6441bc78a82fb502a28, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5543645968882965210, guid: ac290ce98d09d6441bc78a82fb502a28, type: 3}
       propertyPath: m_RootOrder
@@ -2480,7 +2484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5195162437412585483, guid: ac290ce98d09d6441bc78a82fb502a28, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5543645968882965210, guid: ac290ce98d09d6441bc78a82fb502a28, type: 3}
       propertyPath: m_RootOrder
@@ -2543,6 +2547,7 @@ GameObject:
   m_Component:
   - component: {fileID: 472263505}
   - component: {fileID: 472263504}
+  - component: {fileID: 472263506}
   m_Layer: 0
   m_Name: CasinoSceneManager
   m_TagString: Untagged
@@ -2581,6 +2586,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &472263506
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472263503}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b08b16e3e6479574094787c4381260a2, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &480957134
 GameObject:
   m_ObjectHideFlags: 0
@@ -3659,7 +3760,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 109e676441d3a9947a588f9ce0723817, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3699,10 +3800,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredDistance: 0
   isSpecialInteraction: 0
-  holdDuration: 1
-  holdInteract: 1
+  holdDuration: 0
+  holdInteract: 0
   multipleUse: 0
-  isInteractable: 0
+  isInteractable: 1
   casino1: {fileID: 472263504}
   playerController: {fileID: 507770759}
   interact: 1
@@ -3785,7 +3886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5195162437412585483, guid: ac290ce98d09d6441bc78a82fb502a28, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5543645968882965210, guid: ac290ce98d09d6441bc78a82fb502a28, type: 3}
       propertyPath: m_RootOrder
@@ -3906,6 +4007,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1643728029}
     m_Modifications:
+    - target: {fileID: 5143948567200177885, guid: 337337c1fcf65134ca6bb4b0a8c0ec46, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5479416178920745578, guid: 337337c1fcf65134ca6bb4b0a8c0ec46, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -4583,7 +4688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5195162437412585483, guid: ac290ce98d09d6441bc78a82fb502a28, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5543645968882965210, guid: ac290ce98d09d6441bc78a82fb502a28, type: 3}
       propertyPath: m_RootOrder
@@ -4850,7 +4955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5195162437412585483, guid: ac290ce98d09d6441bc78a82fb502a28, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5543645968882965210, guid: ac290ce98d09d6441bc78a82fb502a28, type: 3}
       propertyPath: m_RootOrder
@@ -5240,6 +5345,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1643728029}
     m_Modifications:
+    - target: {fileID: 5143948567200177885, guid: 337337c1fcf65134ca6bb4b0a8c0ec46, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5479416178920745578, guid: 337337c1fcf65134ca6bb4b0a8c0ec46, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -5319,7 +5428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5195162437412585483, guid: ac290ce98d09d6441bc78a82fb502a28, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5543645968882965210, guid: ac290ce98d09d6441bc78a82fb502a28, type: 3}
       propertyPath: m_RootOrder
@@ -5504,6 +5613,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1643728029}
     m_Modifications:
+    - target: {fileID: 5143948567200177885, guid: 337337c1fcf65134ca6bb4b0a8c0ec46, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5479416178920745578, guid: 337337c1fcf65134ca6bb4b0a8c0ec46, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -5566,6 +5679,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4390828761628540020, guid: 77769dc9f6e1faa4185758a0ea1e9976, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4390828761628540021, guid: 77769dc9f6e1faa4185758a0ea1e9976, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -6849,6 +6966,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: slotMachine
       objectReference: {fileID: 0}
+    - target: {fileID: 5195162437412585483, guid: ac290ce98d09d6441bc78a82fb502a28, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5543645968882965210, guid: ac290ce98d09d6441bc78a82fb502a28, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6907,6 +7028,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1643728029}
     m_Modifications:
+    - target: {fileID: 5143948567200177885, guid: 337337c1fcf65134ca6bb4b0a8c0ec46, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5479416178920745578, guid: 337337c1fcf65134ca6bb4b0a8c0ec46, type: 3}
       propertyPath: m_RootOrder
       value: 1

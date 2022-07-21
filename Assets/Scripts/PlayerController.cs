@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Aarthificial.Reanimation;
+using Card;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -12,13 +14,13 @@ public enum PlayerState {
     Hit = 2,
 }
 
-public interface IPlayer
-{
+public interface IPlayer {
     void TakeDamage();
 }
-public class PlayerController : MonoBehaviour,IPlayer {
-    [SerializeField]
-    public int PlayerHealth = 200;
+
+public class PlayerController : MonoBehaviour, IPlayer {
+    [FormerlySerializedAs("PlayerHealth")] [SerializeField] public int playerHealth = 200;
+
     private static class Drivers {
         public const string IsMoving = "isMoving";
         public const string IsMovingHorizontal = "isMovingHorizontal";
@@ -29,13 +31,33 @@ public class PlayerController : MonoBehaviour,IPlayer {
         public const string MovingLeft = "movingLeft";
     }
 
-    public void TakeDamage()
-    {
-        Debug.Log(PlayerHealth);
-        if (PlayerHealth > 0)
-        {
-            Flash();
-            PlayerHealth -= 10;
+    private int durability = 0;
+    private int fireRate = 0;
+    private int damageBoost = 0;
+
+    private void Start() {
+        ApplyEffects();
+    }
+
+    private void ApplyEffects() {
+        ApplyStatusEffects.ApplyPlayer(ref damageBoost, ref fireRate, ref durability); 
+    }
+
+    private static int GetFactor(float baseD, float field) {
+        if (field < 0) {
+            var f = 1 + (-field / 5f);
+            return Mathf.CeilToInt(baseD * f);
+        }
+        else {
+            return Mathf.CeilToInt(baseD - field / 5);
+        }
+    }
+
+    public void TakeDamage() {
+        Debug.Log(playerHealth);
+        if (playerHealth > 0) {
+            DamageAnimation();
+            playerHealth -= GetFactor(10, durability);
         }
         else {
             GameManager.Instance.justDied = true;
@@ -125,14 +147,8 @@ public class PlayerController : MonoBehaviour,IPlayer {
         reanimator.Set(Drivers.IsMovingRight, MovementDirection.x > 0);
         reanimator.Set(Drivers.IsMovingUp, MovementDirection.y > 0);
     }
-#if UNITY_EDITOR
-    void OnGUI() {
-        if (GUILayout.Button("Flash")) {
-            Flash();
-        }
-    }
-#endif
-    public void Flash() {
+
+    public void DamageAnimation() {
         StartCoroutine(FlashDamage());
     }
 

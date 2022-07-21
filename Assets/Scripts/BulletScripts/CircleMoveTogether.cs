@@ -7,16 +7,18 @@ public class CircleMoveTogether : MonoBehaviour
     public GameObject TrianglesPrefab;
 
     private GameObject player;
-    void Start()
+
+    private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         InvokeRepeating("TriangleSummon",0f,2f);
     }
     private void TriangleSummon()
     {
-        Vector3 face = (player.transform.position - transform.position).normalized;
+        var position = transform.position;
+        var face = (player.transform.position - position).normalized;
         //GameObject bullet =
-        Vector3 right = new Vector3(transform.position.x+.5f, transform.position.y-.4f,transform.position.z);
+        var right = new Vector3(position.x+.5f, position.y-.4f,position.z);
         Instantiate(TrianglesPrefab, right,Quaternion.Euler(0f,0f,-90f));
         
       //  bullet.transform.position 

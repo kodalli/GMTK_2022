@@ -1,36 +1,39 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class straightPattern : MonoBehaviour
-{
-    public GameObject homingProj1;
-    [SerializeField]
-    public AudioClip pewSound;
-
-    private float timer = 0f;
-    public float timerEnd = 10f;
-
-    [SerializeField]
-    private int projs = 3;
-    private void Update()
+namespace BulletScripts {
+    public class straightPattern : MonoBehaviour
     {
-        if (timer<timerEnd)
+        public GameObject homingProj1;
+        [SerializeField]
+        public AudioClip pewSound;
+
+        private float timer = 0f;
+        public float timerEnd = 10f;
+
+        [FormerlySerializedAs("projs")] [SerializeField]
+        private int projectiles = 3;
+        private void Update()
         {
-            timer += Time.deltaTime;
+            if (timer<timerEnd)
+            {
+                timer += Time.deltaTime;
+            }
+            else{
+                timer = 0f;
+                StartCoroutine(Spawn());
+            }
         }
-        else{
-            timer = 0f;
-            StartCoroutine(Spawn(projs));
-        }
-    }
-    private IEnumerator Spawn(int projs)
-    {
-        for (int i = 0; i < projs; i++)
+        private IEnumerator Spawn()
         {
-            Instantiate(homingProj1, transform.position,transform.rotation);
-            SoundManager.Instance.PlaySound(pewSound);
-            yield return new WaitForSeconds(.2f);
+            for (var i = 0; i < projectiles; i++)
+            {
+                var transform1 = transform;
+                Instantiate(homingProj1, transform1.position,transform1.rotation);
+                SoundManager.Instance.PlaySound(pewSound);
+                yield return new WaitForSeconds(.2f);
+            }
         }
     }
 }
