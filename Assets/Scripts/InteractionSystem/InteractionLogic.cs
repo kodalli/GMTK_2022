@@ -19,6 +19,7 @@ public class InteractionLogic : ScriptableObject {
     }
 
     private void CheckForInteractable(PlayerController player, Vector3 center) {
+        // TODO: Change to overlap circle
         var hitSomething = Helper.CircleCast(center, 2f, center, 0, interactionLayer,
             out var ray);
         if (hitSomething) {
