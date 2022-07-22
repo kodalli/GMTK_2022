@@ -553,6 +553,10 @@ PrefabInstance:
       value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3517422458014903039, guid: 436305a44c3d908419253186084e310f, type: 3}
+      propertyPath: playerHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517422458014903039, guid: 436305a44c3d908419253186084e310f, type: 3}
       propertyPath: takeDamageMat
       value: 
       objectReference: {fileID: 2100000, guid: 8557fc764835448489c68bbb76335eba, type: 2}
@@ -569,6 +573,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2845576058537060924, guid: 0445fe3c27060e64080d7191835bf508, type: 3}
+      propertyPath: activeStatuses.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2845576058537060924, guid: 0445fe3c27060e64080d7191835bf508, type: 3}
+      propertyPath: activeStatuses.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 78b3af0886616f94896e214467e97db7, type: 2}
     - target: {fileID: 2845576058537060925, guid: 0445fe3c27060e64080d7191835bf508, type: 3}
       propertyPath: m_RootOrder
       value: 9

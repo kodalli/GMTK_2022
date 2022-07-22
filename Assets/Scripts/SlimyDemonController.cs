@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public interface IEnemy {
-    void TakeDamage();
+    void TakeDamage(float damageValue);
 }
 public class SlimyDemonController : MonoBehaviour, IEnemy {
     private SpriteRenderer SpriteRenderer;
@@ -26,8 +26,9 @@ public class SlimyDemonController : MonoBehaviour, IEnemy {
          }
     }
 
-    public void TakeDamage() {
-        health -= 5;
+    public void TakeDamage(float damageValue) {
+        // TODO: damage adjust from status effect
+        health -= damageValue;
         
         if (health == 0) {
             GameManager.Instance.LoadMainMenu();

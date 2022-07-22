@@ -9,7 +9,10 @@ public class BulletController : MonoBehaviour
     private float lifeSpan = 20f;
     [SerializeField]
     public bool isEnemyBullet;
-    void Start()
+
+    public float damage = 5f;
+
+    private void Start()
     {
         Destroy(gameObject, lifeSpan);
     }
@@ -21,20 +24,16 @@ public class BulletController : MonoBehaviour
         if (!isEnemyBullet)
         {
             var enemy = other.gameObject.GetComponent<IEnemy>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage();
-                Destroy();
-            }
+            if (enemy == null) return;
+            enemy.TakeDamage(damage);
+            Destroy();
         }
         else
         {
             var player = other.gameObject.GetComponent<IPlayer>();
-            if (player != null)
-            {
-                player.TakeDamage();
-                Destroy();
-            }
+            if (player == null) return;
+            player.TakeDamage();
+            Destroy();
         }
     }
 }

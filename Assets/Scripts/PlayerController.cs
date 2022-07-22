@@ -19,7 +19,8 @@ public interface IPlayer {
 }
 
 public class PlayerController : MonoBehaviour, IPlayer {
-    [FormerlySerializedAs("PlayerHealth")] [SerializeField] public int playerHealth = 200;
+    [FormerlySerializedAs("PlayerHealth")] [SerializeField]
+    public int playerHealth = 200;
 
     private static class Drivers {
         public const string IsMoving = "isMoving";
@@ -31,39 +32,6 @@ public class PlayerController : MonoBehaviour, IPlayer {
         public const string MovingLeft = "movingLeft";
     }
 
-    private int durability = 0;
-    private int fireRate = 0;
-    private int damageBoost = 0;
-
-    private void Start() {
-        ApplyEffects();
-    }
-
-    private void ApplyEffects() {
-        ApplyStatusEffects.ApplyPlayer(ref damageBoost, ref fireRate, ref durability); 
-    }
-
-    private static int GetFactor(float baseD, float field) {
-        if (field < 0) {
-            var f = 1 + (-field / 5f);
-            return Mathf.CeilToInt(baseD * f);
-        }
-        else {
-            return Mathf.CeilToInt(baseD - field / 5);
-        }
-    }
-
-    public void TakeDamage() {
-        Debug.Log(playerHealth);
-        if (playerHealth > 0) {
-            DamageAnimation();
-            playerHealth -= GetFactor(10, durability);
-        }
-        else {
-            GameManager.Instance.justDied = true;
-            GameManager.Instance.LoadCasinoScene1();
-        }
-    }
 
     [SerializeField] private InputProvider inputProvider;
     [SerializeField] private InteractionLogic interactionLogic;
@@ -94,6 +62,13 @@ public class PlayerController : MonoBehaviour, IPlayer {
     // private bool movingRight;
     // private bool movingLeft;
 
+    private int durability = 0;
+    private int fireRate = 100;
+    private int damageBoost = 5;
+    private bool fire = false;
+
+    [SerializeField] private float fireCountDown = 0;
+
     private void Awake() {
         inputProvider.EnableInput();
 
@@ -104,6 +79,37 @@ public class PlayerController : MonoBehaviour, IPlayer {
         gun = transform.Find("Gun").gameObject;
     }
 
+    private void Start() {
+        ApplyEffects();
+    }
+
+    private void ApplyEffects() {
+        ApplyStatusEffects.ApplyPlayer(ref damageBoost, ref fireRate, ref durability);
+        Debug.Log($"{damageBoost} {fireRate} {durability}");
+    }
+
+    private static int GetFactor(float baseD, float field) {
+        if (field < 0) {
+            var f = 1 + (-field / 5f);
+            return Mathf.CeilToInt(baseD * f);
+        }
+        else {
+            return Mathf.CeilToInt(baseD - field / 5);
+        }
+    }
+
+    public void TakeDamage() {
+        Debug.Log(playerHealth);
+        if (playerHealth > 0) {
+            DamageAnimation();
+            playerHealth -= GetFactor(10, durability);
+        }
+        else {
+            GameManager.Instance.justDied = true;
+            GameManager.Instance.LoadCasinoScene1();
+        }
+    }
+
     private void OnDrawGizmos() {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(collider.bounds.center, 2f);
@@ -111,7 +117,8 @@ public class PlayerController : MonoBehaviour, IPlayer {
 
     private void OnEnable() {
         inputProvider.MousePosEvent += OnMouse;
-        inputProvider.ShootEvent += Shoot;
+        inputProvider.ShootEventStart += ToggleFireOn;
+        inputProvider.ShootEventEnd += ToggleFireOff;
         // reanimator.AddListener(Drivers.MovingLeft, () => {
         // movingLeft = true;
         // movingRight = false;
@@ -124,7 +131,8 @@ public class PlayerController : MonoBehaviour, IPlayer {
 
     private void OnDisable() {
         inputProvider.MousePosEvent -= OnMouse;
-        inputProvider.ShootEvent -= Shoot;
+        inputProvider.ShootEventStart -= ToggleFireOn;
+        inputProvider.ShootEventEnd -= ToggleFireOff;
 
         // reanimator.RemoveListener(Drivers.MovingLeft, () => {
         // movingLeft = true;
@@ -137,6 +145,7 @@ public class PlayerController : MonoBehaviour, IPlayer {
     }
 
     private void Update() {
+        UpdateFireGun();
         UpdateMovementState();
         UpdateGunDirection();
         UpdateGunDirection();
@@ -159,14 +168,30 @@ public class PlayerController : MonoBehaviour, IPlayer {
         spriteRenderer.material = spritesDefault;
     }
 
+    private void UpdateFireGun() {
+        if (fire && fireCountDown < 0) {
+            fireCountDown = 10f / fireRate;
+            Shoot();
+        }
+
+        if (fireCountDown > -0.1f) {
+            fireCountDown -= Time.deltaTime;
+        }
+    }
+
+    private void ToggleFireOn() => fire = true;
+
+    private void ToggleFireOff() => fire = false;
 
     private void Shoot() {
         if (gun == null || !gun.activeSelf) {
             return;
         }
 
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        var rb = bullet.GetComponent<Rigidbody2D>();
+        var bc = bullet.GetComponent<BulletController>();
+        bc.damage = damageBoost;
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
     }
 
