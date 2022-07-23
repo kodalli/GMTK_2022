@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Start() {
+        SoundManager.Instance.PlaySlotDemon();
         // LoadMainMenu();
         menuCanvas = GameObject.Find("MenuCanvas");
 
@@ -59,7 +60,8 @@ public class GameManager : MonoBehaviour {
         enemyEffects = new EffectFields(damageBoost, fireRate, durability);
     }
 
-    public void LoadCasinoScene1() {
+    public static void LoadCasinoScene1() {
+        SoundManager.Instance.PlaySlotDemon();
         SceneManager.LoadScene(CasinoIndex1);
     }
 
@@ -71,15 +73,18 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene(CasinoIndex3);
     }
 
-    public void LoadIntroScene() {
+    public static void LoadIntroScene() {
+        SoundManager.Instance.PlaySlotDemon();
         SceneManager.LoadScene(IntroIndex);
     }
 
-    public void LoadMainMenu() {
+    public static void LoadMainMenu() {
+        SoundManager.Instance.PlaySlotDemon();
         SceneManager.LoadScene(MenuIndex);
     }
 
-    public void LoadBattleScene1() {
+    public static void LoadBattleScene1() {
+        SoundManager.Instance.PlayBossMusic();
         SceneManager.LoadScene(Battle1Index);
     }
 

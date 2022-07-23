@@ -37,7 +37,7 @@ namespace Ui {
             yield return new WaitForSeconds(2f);
             blackScreen.OpenPanel();
             yield return new WaitForSeconds(2.5f);
-            GameManager.Instance.LoadCasinoScene1();    
+            GameManager.LoadCasinoScene1();    
         }
     }
 }

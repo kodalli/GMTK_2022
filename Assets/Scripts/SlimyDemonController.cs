@@ -51,7 +51,7 @@ public class SlimyDemonController : MonoBehaviour, IEnemy {
         DamageAnimation();
         
         if (health <= 0) {
-            GameManager.Instance.LoadMainMenu();
+            GameManager.LoadMainMenu();
         }
     }
     

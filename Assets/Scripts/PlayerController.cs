@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour, IPlayer {
         }
         else {
             GameManager.Instance.justDied = true;
-            GameManager.Instance.LoadCasinoScene1();
+            GameManager.LoadCasinoScene1();
         }
     }
 
