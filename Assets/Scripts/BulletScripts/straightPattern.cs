@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -14,6 +15,11 @@ namespace BulletScripts {
 
         [FormerlySerializedAs("projs")] [SerializeField]
         private int projectiles = 3;
+
+        private void Start() {
+            timerEnd = GameManager.Instance.enemyEffects.fireRate / 10f;
+        }
+
         private void Update()
         {
             if (timer<timerEnd)

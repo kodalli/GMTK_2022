@@ -15,7 +15,7 @@ public enum PlayerState {
 }
 
 public interface IPlayer {
-    void TakeDamage();
+    void TakeDamage(float damageValue);
 }
 
 public class PlayerController : MonoBehaviour, IPlayer {
@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour, IPlayer {
     private Reanimator reanimator;
     private CollisionDetection collisionDetection;
     private GameObject gun;
+    private SpriteRenderer spriteRenderer;
     public Transform firePoint;
     public GameObject bulletPrefab;
 
@@ -62,7 +63,7 @@ public class PlayerController : MonoBehaviour, IPlayer {
     // private bool movingRight;
     // private bool movingLeft;
 
-    private int durability = 0;
+    private int durability = 1;
     private int fireRate = 100;
     private int damageBoost = 5;
     private bool fire = false;
@@ -75,40 +76,16 @@ public class PlayerController : MonoBehaviour, IPlayer {
         reanimator = GetComponent<Reanimator>();
         collisionDetection = GetComponent<CollisionDetection>();
         collider = GetComponent<BoxCollider2D>();
-
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        
         gun = transform.Find("Gun").gameObject;
+
     }
 
     private void Start() {
         ApplyEffects();
     }
 
-    private void ApplyEffects() {
-        ApplyStatusEffects.ApplyPlayer(ref damageBoost, ref fireRate, ref durability);
-        Debug.Log($"{damageBoost} {fireRate} {durability}");
-    }
-
-    private static int GetFactor(float baseD, float field) {
-        if (field < 0) {
-            var f = 1 + (-field / 5f);
-            return Mathf.CeilToInt(baseD * f);
-        }
-        else {
-            return Mathf.CeilToInt(baseD - field / 5);
-        }
-    }
-
-    public void TakeDamage() {
-        Debug.Log(playerHealth);
-        if (playerHealth > 0) {
-            DamageAnimation();
-            playerHealth -= GetFactor(10, durability);
-        }
-        else {
-            GameManager.Instance.justDied = true;
-            GameManager.Instance.LoadCasinoScene1();
-        }
-    }
 
     private void OnDrawGizmos() {
         Gizmos.color = Color.blue;
@@ -157,16 +134,45 @@ public class PlayerController : MonoBehaviour, IPlayer {
         reanimator.Set(Drivers.IsMovingUp, MovementDirection.y > 0);
     }
 
-    public void DamageAnimation() {
+    #region Status Effects
+
+    private void ApplyEffects() {
+        StatusEffects.ApplyPlayer(ref damageBoost, ref fireRate, ref durability);
+        GameManager.Instance.SetPlayerEffects(damageBoost, fireRate, durability);
+        Debug.Log(
+            $"Player: damage: {damageBoost}, fire rate: {fireRate}, durability: {durability}");
+    }
+
+
+    #endregion
+
+    #region Take Damage
+
+    public void TakeDamage(float damageValue) {
+        Debug.Log(playerHealth);
+        if (playerHealth > 0) {
+            DamageAnimation();
+            playerHealth -= StatusEffects.GetFactor(damageValue, durability);
+        }
+        else {
+            GameManager.Instance.justDied = true;
+            GameManager.Instance.LoadCasinoScene1();
+        }
+    }
+
+    private void DamageAnimation() {
         StartCoroutine(FlashDamage());
     }
 
     private IEnumerator FlashDamage() {
-        var spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.material = takeDamageMat;
         yield return new WaitForSeconds(0.2f);
         spriteRenderer.material = spritesDefault;
     }
+
+    #endregion
+
+    #region Shooting
 
     private void UpdateFireGun() {
         if (fire && fireCountDown < 0) {
@@ -190,10 +196,11 @@ public class PlayerController : MonoBehaviour, IPlayer {
 
         var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         var rb = bullet.GetComponent<Rigidbody2D>();
-        var bc = bullet.GetComponent<BulletController>();
-        bc.damage = damageBoost;
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
     }
+
+    #endregion
+
 
     private void OnMouse(Vector2 value) =>
         gunDirectionInput = Camera.main.ScreenToWorldPoint(value) - transform.position;

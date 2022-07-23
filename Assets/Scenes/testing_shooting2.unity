@@ -379,6 +379,11 @@ MonoBehaviour:
   - {fileID: 1032091278}
   - {fileID: 263184207}
   - {fileID: 2107233078}
+  takeDamageMat: {fileID: 0}
+  spritesDefault: {fileID: 0}
+  damageBoost: 0
+  fireRate: 0
+  durability: 0
 --- !u!114 &877511769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -835,6 +840,14 @@ PrefabInstance:
       propertyPath: pewSound
       value: 
       objectReference: {fileID: 8300000, guid: bc51307fc66b3bd4eb155905fd62cc02, type: 3}
+    - target: {fileID: 877511764, guid: 1914d1a87fc21b4438f63cde9a2471e8, type: 3}
+      propertyPath: takeDamageMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 8557fc764835448489c68bbb76335eba, type: 2}
+    - target: {fileID: 877511764, guid: 1914d1a87fc21b4438f63cde9a2471e8, type: 3}
+      propertyPath: spritesDefault
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 877511764, guid: 1914d1a87fc21b4438f63cde9a2471e8, type: 3}
       propertyPath: waypoints.Array.size
       value: 4

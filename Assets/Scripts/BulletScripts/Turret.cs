@@ -19,8 +19,8 @@ public class Turret : MonoBehaviour
     [SerializeField]
     private float frequency = 1f;
  
-    private void Start()
-    {
+    private void Start() {
+        frequency = GameManager.Instance.enemyEffects.fireRate / 100f;
         InvokeRepeating(nameof(Fire), 0f, frequency);
     }
  

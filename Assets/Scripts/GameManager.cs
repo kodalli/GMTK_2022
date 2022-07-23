@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Card;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -18,6 +19,9 @@ public class GameManager : MonoBehaviour {
     public List<Card.Card> activeStatuses = new List<Card.Card>();
     public bool reachedFirstDialogueTuxedo = false;
     public bool justDied = false;
+
+    public EffectFields playerEffects;
+    public EffectFields enemyEffects;
 
     private GameObject menuCanvas;
     private GameObject startButton;
@@ -42,9 +46,17 @@ public class GameManager : MonoBehaviour {
         if (menuCanvas == null) return;
         startButton = menuCanvas.FindInChildren("StartButton");
         exitButton = menuCanvas.FindInChildren("ExitButton");
-            
+
         startButton.GetComponent<Button>().onClick.AddListener(LoadIntroScene);
         exitButton.GetComponent<Button>().onClick.AddListener(Application.Quit);
+    }
+
+    public void SetPlayerEffects(int damageBoost, int fireRate, int durability) {
+        playerEffects = new EffectFields(damageBoost, fireRate, durability);
+    }
+
+    public void SetEnemyEffects(int damageBoost, int fireRate, int durability) {
+        enemyEffects = new EffectFields(damageBoost, fireRate, durability);
     }
 
     public void LoadCasinoScene1() {

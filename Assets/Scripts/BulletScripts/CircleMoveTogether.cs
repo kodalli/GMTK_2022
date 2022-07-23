@@ -11,7 +11,8 @@ public class CircleMoveTogether : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        InvokeRepeating("TriangleSummon",0f,2f);
+        var fireRate = GameManager.Instance.enemyEffects.fireRate / 50f;
+        InvokeRepeating("TriangleSummon",0f, fireRate);
     }
     private void TriangleSummon()
     {
