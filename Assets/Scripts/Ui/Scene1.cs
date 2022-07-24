@@ -14,7 +14,7 @@ namespace Ui {
 
         private void Start() {
             Toggle(false);
-            Invoke(nameof(Activate), 1.2f);
+            // Invoke(nameof(Activate), 1.2f);
         }
 
         private void Toggle(bool state) {
@@ -23,7 +23,7 @@ namespace Ui {
             buttonHolder.SetActive(state);
         }
 
-        private void Activate() {
+        public void Activate() {
             Toggle(true);
             reader.Speaker = boss.GetComponent<Talking>();
         }
@@ -37,7 +37,7 @@ namespace Ui {
             yield return new WaitForSeconds(2f);
             blackScreen.OpenPanel();
             yield return new WaitForSeconds(2.5f);
-            GameManager.Instance.LoadCasinoScene1();    
+            GameManager.LoadCasinoScene1();    
         }
     }
 }

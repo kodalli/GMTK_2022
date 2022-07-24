@@ -10,7 +10,8 @@ public class InputProvider : ScriptableObject, IInputProvider, PlayerInput.IGame
     private PlayerInput GameInput { get; set; }
     public InputState inputState;
     public event UnityAction<Vector2> MousePosEvent;
-    public event UnityAction ShootEvent;
+    public event UnityAction ShootEventStart;
+    public event UnityAction ShootEventEnd;
     public event UnityAction InteractionCancelledEvent;
     public event UnityAction InteractionStartedEvent;
 
@@ -53,11 +54,12 @@ public class InputProvider : ScriptableObject, IInputProvider, PlayerInput.IGame
             case InputActionPhase.Started:
                 inputState.leftMouseButtonClicked = true;
                 inputState.leftMouseButtonReleased = false;
-                ShootEvent?.Invoke();
+                ShootEventStart?.Invoke();
                 break;
             case InputActionPhase.Canceled:
                 inputState.leftMouseButtonClicked = false;
                 inputState.leftMouseButtonReleased = true;
+                ShootEventEnd?.Invoke();
                 break;
         }
     }

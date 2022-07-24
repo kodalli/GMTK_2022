@@ -7,7 +7,8 @@ public class EnemyBullet : MonoBehaviour
 
     [SerializeField]
     private float lifeSpan = 20f;
-    void Start()
+
+    private void Start()
     {
         Destroy(gameObject, lifeSpan);
     }
@@ -18,10 +19,9 @@ public class EnemyBullet : MonoBehaviour
     {
         Debug.Log("hit");
         var player = other.gameObject.GetComponent<PlayerController>();
-        if (player != null)
-        {
-            player.TakeDamage();
-            gameObject.SetActive(false);
-        }
+        if (player == null) return;
+        var playerDamage = GameManager.Instance.playerEffects.damageBoost;
+        player.TakeDamage(playerDamage);
+        gameObject.SetActive(false);
     }
 }

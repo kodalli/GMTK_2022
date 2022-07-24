@@ -33,7 +33,7 @@ public class Scene2 : MonoBehaviour {
 
     private IEnumerator NextScene() {
         yield return new WaitForSeconds(2f);
-        GameManager.Instance.LoadBattleScene1();
+        GameManager.LoadBattleScene1();
     }
     
     public void StartDialogue() {
