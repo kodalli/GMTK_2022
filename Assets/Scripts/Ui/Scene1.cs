@@ -14,7 +14,7 @@ namespace Ui {
 
         private void Start() {
             Toggle(false);
-            Invoke(nameof(Activate), 1.2f);
+            // Invoke(nameof(Activate), 1.2f);
         }
 
         private void Toggle(bool state) {
@@ -23,7 +23,7 @@ namespace Ui {
             buttonHolder.SetActive(state);
         }
 
-        private void Activate() {
+        public void Activate() {
             Toggle(true);
             reader.Speaker = boss.GetComponent<Talking>();
         }
