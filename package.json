@@ -1,1 +1,13 @@
-
+{
+  "name": "com.thundernut.gmtk2022",
+  "version": "1.0.0",
+  "displayName": "Roll or Die",
+  "description": "GMTK 2022 game jam submission.",
+  "unity": "2020.3",
+  "author": {
+    "name": "thundernut",
+    "email": "surya.kodali@gmail.com",
+    "url": ""
+  },
+  "type": "library"
+}
