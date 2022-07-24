@@ -32,7 +32,6 @@ namespace MainGame.DialogueGraph {
         }
 
         private readonly List<Button> buttonList = new List<Button>();
-        private bool isTyping;
 
         private void Start() {
             if (panelContainer != null) {
