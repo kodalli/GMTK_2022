@@ -47,7 +47,11 @@ namespace MainGame.DialogueGraph {
             inputReader = GameObject.FindGameObjectWithTag("Player")
                 .GetComponent<PlayerController>().InputProvider;
             inputReader.DisableInput();
+            dialogueText.text = "";
             panelOpener.OpenPanel();
+        }
+
+        public void StartDialogue() {
             var narrativeData = dialogue.NodeLinks.First(); //Entrypoint node
             ProceedToNarrative(narrativeData.TargetNodeGUID);
         }
@@ -56,6 +60,7 @@ namespace MainGame.DialogueGraph {
             string text = dialogue.DialogueNodeData.Find(x => x.NodeGUID == guid).DialogueText;
             var choices = dialogue.NodeLinks.Where(x => x.BaseNodeGUID == guid);
 
+            if (buttonContainer == null) return;
             var buttons = buttonContainer.GetComponentsInChildren<Button>();
             foreach (var button in buttons)
                 Destroy(button.gameObject);
@@ -77,7 +82,7 @@ namespace MainGame.DialogueGraph {
             StartCoroutine(PlayDialogue(text));
         }
 
-        IEnumerator PlayDialogue(string text) {
+        private IEnumerator PlayDialogue(string text) {
             ToggleButton(false);
 
             var count = 0;
@@ -110,6 +115,7 @@ namespace MainGame.DialogueGraph {
                     gameObject.SetActive(false);
                 }
             }
+            
         }
 
         private void ToggleButton(bool state) {
