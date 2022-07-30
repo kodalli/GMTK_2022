@@ -49,7 +49,13 @@ public class GameManager : MonoBehaviour {
         exitButton = menuCanvas.FindInChildren("ExitButton");
 
         startButton.GetComponent<Button>().onClick.AddListener(LoadIntroScene);
-        exitButton.GetComponent<Button>().onClick.AddListener(Application.Quit);
+        exitButton.GetComponent<Button>().onClick.AddListener(() => {
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #else
+            Application.Quit();
+            #endif
+        });
     }
 
     public void SetPlayerEffects(int damageBoost, int fireRate, int durability) {
