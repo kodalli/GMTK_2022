@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/kodalli/GMTK_2022/compare/v1.0.0...v1.0.1) (2022-08-05)
+
+
+### Bug Fixes
+
+* bug fixes ([bc0409f](https://github.com/kodalli/GMTK_2022/commit/bc0409fa526c1019c5c852fc8b5ab980153dd2c5))
+
 # 1.0.0 (2022-07-24)
 
 
