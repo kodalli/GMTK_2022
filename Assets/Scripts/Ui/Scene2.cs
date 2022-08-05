@@ -4,17 +4,19 @@ using System.Collections.Generic;
 using MainGame.DialogueGraph;
 using Ui;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Scene2 : MonoBehaviour {
     // Start is called before the first frame update
     public DialogueReader reader;
     public PanelOpener blackPanel;
     public GameObject canvas;
+    public GameObject characterPanel;
     private bool reachedFirstDialogue;
     public GameObject dice;
     private bool justDied;
     public DialogueContainer secondaryDialogue;
-    private int talked = 0;
+    [SerializeField]private int talked = 0;
 
     private void Start() {
         reachedFirstDialogue = GameManager.Instance.reachedFirstDialogueTuxedo;
@@ -35,6 +37,11 @@ public class Scene2 : MonoBehaviour {
         yield return new WaitForSeconds(2f);
         GameManager.LoadBattleScene1();
     }
+
+    public void Activate() {
+        characterPanel.SetActive(true);
+        reader.StartDialogue();
+    }
     
     public void StartDialogue() {
         talked++;
@@ -51,6 +58,7 @@ public class Scene2 : MonoBehaviour {
         }
         canvas.SetActive(true);
         reader.panelContainer.SetActive(true);
+        characterPanel.SetActive(false);
         reader.Init();
     }
 

@@ -2553,7 +2553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &472263504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2569,8 +2569,10 @@ MonoBehaviour:
   reader: {fileID: 3176822924005683298}
   blackPanel: {fileID: 2068425050}
   canvas: {fileID: 3176822924005683303}
+  characterPanel: {fileID: 0}
   dice: {fileID: 1453977618}
   secondaryDialogue: {fileID: 11400000, guid: 36a9dd0b97b0cfc448865e17ec2c131d, type: 2}
+  talked: 0
 --- !u!4 &472263505
 Transform:
   m_ObjectHideFlags: 0
@@ -3707,7 +3709,7 @@ MonoBehaviour:
   holdInteract: 0
   multipleUse: 0
   isInteractable: 1
-  casino1: {fileID: 472263504}
+  casino1: {fileID: 4100556183090762740}
   playerController: {fileID: 507770759}
   interact: 1
 --- !u!1001 &951936617
@@ -6760,6 +6762,7 @@ GameObject:
   - component: {fileID: 4100556183090762765}
   - component: {fileID: 4100556183090762764}
   - component: {fileID: 4100556183090762767}
+  - component: {fileID: 4100556183090762740}
   m_Layer: 5
   m_Name: Container
   m_TagString: Untagged
@@ -6788,6 +6791,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -275}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4100556183090762740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4100556183090762738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd91c1a1616dad04cb2adc495ba631e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reader: {fileID: 3176822924005683298}
+  blackPanel: {fileID: 2068425050}
+  canvas: {fileID: 3176822924005683303}
+  characterPanel: {fileID: 4100556182676009307}
+  dice: {fileID: 1453977618}
+  secondaryDialogue: {fileID: 11400000, guid: 36a9dd0b97b0cfc448865e17ec2c131d, type: 2}
+  talked: 0
 --- !u!95 &4100556183090762764
 Animator:
   serializedVersion: 3
