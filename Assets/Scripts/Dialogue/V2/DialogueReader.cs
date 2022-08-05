@@ -9,13 +9,11 @@ using UnityEngine.UI;
 
 namespace MainGame.DialogueGraph {
     public class DialogueReader : MonoBehaviour {
+        public GameObject panelContainer;
         [SerializeField] private DialogueContainer dialogue;
         [SerializeField] private TextMeshProUGUI dialogueText;
         [SerializeField] private Button choicePrefab;
-
         [SerializeField] private Transform buttonContainer;
-        public GameObject panelContainer;
-
         [SerializeField] private AudioClip sound;
         [SerializeField] private InputProvider inputReader;
         [SerializeField] private PanelOpener panelOpener;
