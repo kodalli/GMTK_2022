@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/kodalli/GMTK_2022/compare/v1.0.1...v1.0.2) (2022-08-07)
+
+
+### Bug Fixes
+
+* added feel asset ([f30f8fa](https://github.com/kodalli/GMTK_2022/commit/f30f8fa6fb4cf239d861167daa47acc6c1132301))
+
 ## [1.0.1](https://github.com/kodalli/GMTK_2022/compare/v1.0.0...v1.0.1) (2022-08-05)
 
 
